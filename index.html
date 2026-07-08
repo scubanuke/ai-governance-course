@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Basis for AI Governance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root{
+    --paper:#F6F7F7; --panel:#FFFFFF;
+    --ink:#1A1F26; --muted:#697079; --faint:#DEE2E4;
+    --line:#C6871B;           /* the Bright Line */
+    --line-deep:#96631A;
+    --serif:'Spectral',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- shell ---------- */
+  .app{display:grid; grid-template-columns:312px 1fr; min-height:100vh}
+  .nav{
+    background:var(--panel);
+    border-right:2px solid var(--line);      /* the spine */
+    padding:34px 26px 60px;
+    position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .content{padding:56px clamp(24px,6vw,96px); max-width:940px}
+
+  /* ---------- masthead in nav ---------- */
+  .brand{margin-bottom:30px}
+  .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--line-deep); margin:0 0 10px;
+  }
+  .brand h1{
+    font-size:23px; font-weight:600; line-height:1.15; margin:0;
+  }
+  .brand p{font-size:13.5px; color:var(--muted); margin:8px 0 0; font-style:italic}
+
+  /* ---------- nav groups ---------- */
+  .grouplabel{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--muted);
+    margin:26px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--faint);
+  }
+  .flat a{
+    display:block; text-decoration:none; color:var(--ink);
+    font-size:15.5px; padding:5px 0;
+  }
+  details{margin:2px 0}
+  summary{
+    cursor:pointer; list-style:none; padding:5px 0;
+    font-size:15.5px; font-weight:500; color:var(--ink);
+    display:flex; align-items:baseline; gap:8px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary .mk{
+    font-family:var(--mono); font-size:11px; color:var(--line-deep);
+    transition:transform .15s ease;
+  }
+  details[open] summary .mk{transform:rotate(90deg)}
+  .units{margin:2px 0 10px 20px; padding-left:12px; border-left:1px solid var(--faint)}
+  .units a{
+    display:block; text-decoration:none; color:var(--muted);
+    font-size:14px; padding:4px 0; line-height:1.4;
+  }
+  .nav a:hover{color:var(--line-deep)}
+  .nav a.active{
+    color:var(--line-deep); font-weight:500;
+    position:relative;
+  }
+  .nav a.active::before{
+    content:""; position:absolute; left:-13px; top:50%; transform:translateY(-50%);
+    width:5px; height:5px; background:var(--line);   /* tick on the spine */
+  }
+  .flat a.active::before{left:-26px}
+
+  /* ---------- mobile bar ---------- */
+  .topbar{display:none}
+
+  /* ---------- rendered markdown ---------- */
+  .md{animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .md h1{font-size:34px; font-weight:600; line-height:1.15; margin:0 0 6px; letter-spacing:-.01em}
+  .md h2{font-size:24px; font-weight:600; margin:38px 0 12px; padding-top:10px}
+  .md h3{font-size:19px; font-weight:600; font-style:italic; margin:28px 0 8px}
+  .md p{margin:0 0 16px}
+  .md a{color:var(--line-deep); text-underline-offset:2px}
+  .md strong{font-weight:600}
+  .md ul,.md ol{margin:0 0 18px; padding-left:22px}
+  .md li{margin:5px 0}
+  .md blockquote{
+    margin:0 0 20px; padding:2px 20px; color:var(--muted);
+    border-left:2px solid var(--line); font-style:italic;
+  }
+  .md hr{border:0; border-top:1px solid var(--faint); margin:34px 0}
+  .md code{
+    font-family:var(--mono); font-size:.82em; background:#EEF0F1;
+    padding:1px 6px; border-radius:2px;
+  }
+  .md pre{
+    background:#151A21; color:#D6DCE2; font-family:var(--mono);
+    font-size:13px; line-height:1.5; padding:20px 22px; overflow-x:auto;
+    border-left:2px solid var(--line); margin:0 0 22px;
+  }
+  .md pre code{background:none; padding:0; color:inherit; font-size:inherit}
+  .md table{
+    border-collapse:collapse; width:100%; margin:0 0 22px; font-size:15.5px;
+  }
+  .md th,.md td{
+    text-align:left; padding:9px 14px; border-bottom:1px solid var(--faint);
+    vertical-align:top;
+  }
+  .md thead th{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.04em;
+    text-transform:uppercase; color:var(--muted);
+    border-bottom:2px solid var(--line);
+  }
+  .md tbody tr:last-child td{border-bottom:1px solid var(--faint)}
+
+  .loaderr{color:var(--muted); font-style:italic}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:820px){
+    .app{grid-template-columns:1fr}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      position:sticky; top:0; z-index:20; background:var(--panel);
+      border-bottom:2px solid var(--line); padding:14px 20px;
+    }
+    .topbar .t{font-weight:600; font-size:16px}
+    .topbar button{
+      font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+      background:none; border:1px solid var(--faint); color:var(--ink);
+      padding:7px 12px; cursor:pointer;
+    }
+    .nav{
+      position:fixed; top:51px; left:0; right:0; bottom:0; height:auto;
+      border-right:none; z-index:19; display:none;
+    }
+    .nav.open{display:block}
+    .content{padding:30px 22px 60px}
+    .md h1{font-size:28px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .md,*{animation:none!important; transition:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="t">Design Basis for AI Governance</span>
+  <button id="navToggle" aria-label="Toggle navigation">Menu</button>
+</div>
+<div class="app">
+  <aside class="nav" id="nav">
+    <div class="brand">
+      <p class="eyebrow">Design Basis · AI Governance</p>
+      <h1>A course in consequence-anchored governance</h1>
+      <p>self-paced · work in progress</p>
+    </div>
+    <div id="navtree"></div>
+  </aside>
+  <main class="content">
+    <div class="md" id="md"><p class="loaderr">Loading…</p></div>
+  </main>
+</div>
+
+<script>
+const NAV = [
+  { items:[
+    {t:"Reviewer Preview", f:"REVIEWER-PREVIEW.md"},
+    {t:"Course Map", f:"course-map.md"},
+  ]},
+  { label:"Core", modules:[
+    {t:"Module 0 · Orientation", dir:"core/module-0-orientation", units:[
+      ["Overview","README.md"],["The Founding Gap","00-founding-gap.md"],
+      ["Pick Your Sector","01-pick-your-sector.md"],["In Your Sector","in-your-sector.md"]]},
+    {t:"Module 1 · What We're Governing", dir:"core/module-1-what-were-governing", units:[
+      ["Overview","README.md"],["The Autonomy Boundary","00-concept-autonomy-boundary.md"],
+      ["Snapshot: 2026 Examples","90-snapshot-2026-examples.md"],["In Your Sector","in-your-sector.md"]]},
+    {t:"Module 2 · Consequence-Driven", dir:"core/module-2-consequence-driven", units:[
+      ["Overview","README.md"],["Vulnerability vs Consequence","00-vulnerability-vs-consequence.md"],
+      ["CCE / CIE Lineage","01-cce-cie-lineage.md"],["In Your Sector","in-your-sector.md"]]},
+    {t:"Module 3 · Design Basis Method", dir:"core/module-3-design-basis-methodology", units:[
+      ["Overview","README.md"],["What a Design Basis Is","00-what-is-a-design-basis.md"],
+      ["Consequence-Anchored Root","01-consequence-anchored-root.md"],
+      ["Bounded Adversary Envelope","02-bounded-adversary-envelope.md"],
+      ["DB → DBA → DBA-MA","03-db-to-dba-to-dba-ma.md"],
+      ["The Two Design Bases","04-two-design-bases.md"],["In Your Sector","in-your-sector.md"]]},
+    {t:"Module 4 · Governance Primitives", dir:"core/module-4-governance-primitives", units:[
+      ["Overview","README.md"],["Bright Line Criteria","00-bright-line-criteria.md"],
+      ["Three-Tier Criticality","01-three-tier-criticality.md"],
+      ["The Command Broker","02-command-broker.md"],["In Your Sector","in-your-sector.md"]]},
+  ]},
+  { label:"Bridge", modules:[
+    {t:"Module 5 · Facility Classes", dir:"bridge/module-5-sectors-facility-classes", units:[
+      ["Overview","README.md"],["What a Facility Class Is","00-what-is-a-facility-class.md"],
+      ["Four-Filter Applicability Gate","01-applicability-four-filter-gate.md"],
+      ["Worked Examples","02-worked-examples-lng-oil-marine-datacenter.md"],
+      ["Open Question: OI-O5 / OI-G9","03-open-question-oi-o5-oi-g9.md"],
+      ["Map Your Sector","map-your-sector.md"]]},
+  ]},
+  { label:"Branches", modules:[
+    {t:"OT Track", dir:"branches/ot-track", units:[
+      ["Overview","README.md"],["Design Basis Derivation","00-design-basis-derivation.md"],
+      ["TAF Tiering","01-taf-tiering.md"],["IEEE V&V","02-ieee-vnv.md"],
+      ["62443 Mapping","03-62443-mapping.md"],
+      ["Command Broker & Bright Line","04-command-broker-bright-line-architecture.md"],
+      ["Local Sovereignty","05-local-sovereignty-aurora-disruptor.md"]]},
+    {t:"Policy Track", dir:"branches/policy-track", units:[
+      ["Overview","README.md"],["Consequence & Governance Analysis","00-consequence-governance-analysis.md"],
+      ["Autonomous Influence Broker","01-democratic-safeguards-aib.md"],
+      ["Market Manipulation","02-market-manipulation.md"],
+      ["Three Forms of Deterrence","03-deterrence-forms.md"],
+      ["The Standards Gap","04-standards-gap-nipp-hole.md"]]},
+  ]},
+  { label:"Capstone", modules:[
+    {t:"Capstone", dir:"capstone", units:[
+      ["Overview","README.md"],["Select Your Facility","00-select-your-facility.md"],
+      ["OT Deliverable","01-ot-deliverable-design-basis.md"],
+      ["Policy Deliverable","02-policy-deliverable-governance-analysis.md"],
+      ["Shared Rubric","shared-rubric.md"]]},
+  ]},
+  { label:"Reference", items:[
+    {t:"Conventions", f:"CONVENTIONS.md"},
+    {t:"Glossary", f:"resources/glossary.md"},
+    {t:"Reading List", f:"resources/reading-list.md"},
+    {t:"Repository Structure", f:"STRUCTURE.md"},
+  ]},
+];
+
+const tree = document.getElementById('navtree');
+const mdEl = document.getElementById('md');
+
+function el(tag, cls, html){const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
+
+function buildNav(){
+  NAV.forEach(group=>{
+    if(group.label) tree.appendChild(el('div','grouplabel',group.label));
+    if(group.items){
+      const wrap=el('div','flat');
+      group.items.forEach(it=>{
+        const a=el('a',null,it.t); a.href='#/'+it.f; a.dataset.f=it.f;
+        wrap.appendChild(a);
+      });
+      tree.appendChild(wrap);
+    }
+    if(group.modules){
+      group.modules.forEach(m=>{
+        const d=el('details');
+        const s=el('summary'); s.appendChild(el('span','mk','▸'));
+        s.appendChild(document.createTextNode(m.t)); d.appendChild(s);
+        const u=el('div','units');
+        m.units.forEach(([label,file])=>{
+          const path=m.dir+'/'+file;
+          const a=el('a',null,label); a.href='#/'+path; a.dataset.f=path;
+          u.appendChild(a);
+        });
+        d.appendChild(u); tree.appendChild(d);
+      });
+    }
+  });
+}
+
+async function load(path){
+  mdEl.innerHTML='<p class="loaderr">Loading…</p>';
+  try{
+    const res=await fetch(path,{cache:'no-cache'});
+    if(!res.ok) throw new Error(res.status);
+    const text=await res.text();
+    mdEl.innerHTML=marked.parse(text);
+    mdEl.classList.remove('md'); void mdEl.offsetWidth; mdEl.classList.add('md');
+    window.scrollTo(0,0);
+    document.querySelector('.content').scrollTo?.(0,0);
+  }catch(e){
+    mdEl.innerHTML='<h1>Not available offline</h1><p class="loaderr">This page loads its content from the repository and needs to be viewed on the published site (or a local web server), not by opening the file directly. On GitHub Pages it will display normally.</p>';
+  }
+  setActive(path);
+  // open the parent module of the active unit
+  document.querySelectorAll('details').forEach(d=>{
+    if(d.querySelector('a[data-f="'+cssEsc(path)+'"]')) d.open=true;
+  });
+  document.getElementById('nav').classList.remove('open');
+}
+
+function cssEsc(s){return s.replace(/"/g,'\\"');}
+function setActive(path){
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active', a.dataset.f===path));
+}
+
+function route(){
+  let h=location.hash.replace(/^#\//,'');
+  if(!h) h='REVIEWER-PREVIEW.md';
+  load(h);
+}
+
+document.getElementById('navToggle').addEventListener('click',()=>{
+  document.getElementById('nav').classList.toggle('open');
+});
+
+buildNav();
+window.addEventListener('hashchange',route);
+route();
+</script>
+</body>
+</html>
