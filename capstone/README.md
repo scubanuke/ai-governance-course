@@ -18,6 +18,8 @@ Pick a real facility in the sector you chose at Module 0. Both branches analyze 
 
 Same requirement (address both design bases), different deliverable form.
 
+**See the worked example first.** A fully worked pass through the whole method — for a water treatment plant, with short versions of both branch deliverables — is in [`resources/worked-example-water-treatment.md`](../resources/worked-example-water-treatment.md). Read it as a model answer before you start: it shows what "both design bases, joined at the Bright Line" looks like on a real facility, and the checklist at its end is exactly what the shared rubric grades.
+
 ## Units, in order
 
 1. `00-select-your-facility.md` — choose a real facility

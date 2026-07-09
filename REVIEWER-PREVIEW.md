@@ -1,5 +1,5 @@
 # Design Basis for AI Governance
-## Reviewer's Preview — v0.1 (work in progress)
+## Reviewer's Preview — v1.0 (complete course)
 
 *A self-paced course in consequence-anchored governance for critical infrastructure.*
 Timothy E. Roxey, Eclectic Technologies
@@ -8,7 +8,7 @@ Timothy E. Roxey, Eclectic Technologies
 
 ## What you're looking at, and what I'd value from you
 
-This is an early skeleton of a self-paced course I'm building to teach a method — the engineering **design basis**, borrowed from nuclear safety — applied to the governance of AI in critical infrastructure. It's meant to live on GitHub as self-taught modules.
+This is a complete, self-paced course that teaches a method — the engineering **design basis**, borrowed from nuclear safety — applied to the governance of AI in critical infrastructure. It lives on GitHub as self-taught modules.
 
 I've pulled together just enough here to convey the layout and the pedagogical intent, not the finished content. Most modules are still scaffolding; one is written out so you can judge depth and voice. What I'd most value your eyes on:
 

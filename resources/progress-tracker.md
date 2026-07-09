@@ -4,7 +4,7 @@
 
 ## Intent
 
-In v0.1 the course is a static repository; a learner tracks their own progress by working through the folders in order.
+In v1.0 the course is a static repository; a learner tracks their own progress by working through the folders in order.
 
 A later version is planned to become a **live form** that:
 

@@ -30,7 +30,7 @@ The concept file **references** the snapshot; it does not weave the examples in.
 ## Versioning
 
 - The whole course carries a single version at the repository root (README and course-map), currently **0.1**.
-- Individual units do not carry their own version numbers in this skeleton; the course version governs.
+- Individual units do not carry their own version numbers in this repository; the course version governs.
 - When a unit changes materially, note it in a short changelog at the bottom of that unit rather than renaming the file.
 
 ## Branch parity

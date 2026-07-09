@@ -1,6 +1,6 @@
 # Course Map — Design Basis for AI Governance
 
-**Version 0.1.** This is the working syllabus. Move pieces around here; the folder skeleton mirrors it.
+**Version 1.0.** This is the syllabus for the complete course; the folders mirror it.
 
 The through-line is the **method** — how a design basis is derived and how a facility class is carved. The energy, nuclear, and data-center material are worked examples hanging off that spine, not the only supported paths.
 

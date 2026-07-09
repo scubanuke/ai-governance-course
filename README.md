@@ -1,7 +1,7 @@
 # Design Basis for AI Governance
 ### A self-paced course in consequence-anchored governance for critical infrastructure
 
-**Version 0.1 — course skeleton**
+**Version 1.0 — complete course**
 Author: Timothy E. Roxey, Eclectic Technologies
 
 ---
@@ -47,7 +47,7 @@ When you pick your sector at Module 0, the course does not require that prebuilt
 
 ## Status and roadmap
 
-This is **v0.1**, a static repository. Sector selection and progress are handled by reading the routing above and working through the folders in order.
+This is **v1.0**, a complete static repository — every core module, the bridge, both branches, and the capstone are fully written, with a glossary and reading list in `resources/`. Sector selection and progress are handled by reading the routing above and working through the folders in order.
 
 A later version is planned to become a **live form** that gathers a student's progress and, on request, produces an email summarizing where they are in the course. The seed for that lives in [`resources/progress-tracker.md`](resources/progress-tracker.md). It is a design placeholder for now, not a working feature.
 
@@ -62,7 +62,7 @@ A later version is planned to become a **live form** that gathers a student's pr
 | `branches/ot-track/` | The operational-technology branch |
 | `branches/policy-track/` | The policy branch |
 | `capstone/` | The applied final project and shared rubric |
-| `resources/` | Glossary, reading list, progress-tracker seed |
+| `resources/` | Glossary, reading list, a fully worked example (water), progress-tracker seed |
 
 ---
 
