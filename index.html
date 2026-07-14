@@ -277,6 +277,29 @@ function buildNav(){
   });
 }
 
+// Markdown files link to each other with ordinary relative paths (../../CONVENTIONS.md,
+// course-notes/M03-CN-01-....md). This site serves every page from a #/ route, so those
+// links must be resolved against the current file's folder and rewritten into routes,
+// or the browser goes looking for a real file and gets a 404.
+function resolvePath(base, href){
+  const parts = base.split('/'); parts.pop();           // drop the filename
+  href.split('/').forEach(seg=>{
+    if(seg==='' || seg==='.') return;
+    if(seg==='..') parts.pop(); else parts.push(seg);
+  });
+  return parts.join('/');
+}
+
+function rewriteLinks(path){
+  mdEl.querySelectorAll('a[href]').forEach(a=>{
+    const href = a.getAttribute('href');
+    if(!href || /^([a-z]+:|\/\/|#|mailto:)/i.test(href)) return;   // external, anchor, or mail
+    const [file, frag] = href.split('#');
+    if(!/\.md$/i.test(file)) return;                                 // only markdown targets
+    a.setAttribute('href', '#/' + resolvePath(path, file) + (frag ? '#'+frag : ''));
+  });
+}
+
 async function load(path){
   mdEl.innerHTML='<p class="loaderr">Loading…</p>';
   try{
@@ -284,6 +307,7 @@ async function load(path){
     if(!res.ok) throw new Error(res.status);
     const text=await res.text();
     mdEl.innerHTML=marked.parse(text);
+    rewriteLinks(path);
     mdEl.classList.remove('md'); void mdEl.offsetWidth; mdEl.classList.add('md');
     window.scrollTo(0,0);
     document.querySelector('.content').scrollTo?.(0,0);
