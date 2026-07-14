@@ -2,9 +2,13 @@
 
 Authoritative external sources behind the course, grouped by theme. The author's own instrument series (the DBA / DBA-MA documents, the Command Broker and TAF frameworks, the Democratic Safeguards papers) is referenced from within the modules and is not duplicated here; this list is the external foundation the method builds on. Current-example sources are dated because they age.
 
+> **This list is an index, not an assignment.** Where a source does real work in the course, it has a **Course Note** — an excerpt placed in context under the heading it serves, with what it establishes and where the AI case departs from it. Those are in [`course-notes/`](course-notes/), and they are what you should actually read. Entries below that carry a Note reference point into that collection; the rest are the foundation, there when you want to go deeper.
+
 ## Nuclear design-basis foundations
 
-- U.S. Nuclear Regulatory Commission — the **Design Basis Threat** rule (10 CFR 73.1) and the design-basis concept in reactor licensing. The regulated origin of the discipline the course generalizes.
+- U.S. Nuclear Regulatory Commission — the **Design Basis Threat** rule (10 CFR 73.1) and the design-basis concept in reactor licensing. The regulated origin of the discipline the course generalizes. A regulator writing a bounded adversary down in plain text — which is precisely the artifact the AI side does not yet have.
+- **10 CFR 73.58**, "Safety/security interface requirements for nuclear power reactors," and its implementing guidance, **NRC Regulatory Guide 5.74**. Two co-equal design bases in one facility, merged by making the interface itself the governed object. → **[Course Note M03-CN-01](course-notes/M03-CN-01-safety-security-interface.md)**
+- **10 CFR 50 Appendix B** (quality-assurance criteria for procured safety-related items) and **10 CFR Part 21** (reporting of defects and noncompliance). Part 21 is the precedent that matters most for AI procurement: it places a reporting duty on *suppliers* — reaching non-licensees throughout the supply chain, by statute rather than contract. The acceptance-test and re-test machinery in Module 3, and the authority-gap argument in the policy track, both run off this pair.
 - NRC regulatory guides on digital instrumentation and control and verification (e.g., the RG 1.152 / 1.168–1.173 family), as the nuclear precedent for software V&V in safety systems.
 
 ## Consequence-driven engineering (CCE / CIE)

@@ -63,6 +63,7 @@ ai-governance-course/
       02-bounded-adversary-envelope.md
       03-db-to-dba-to-dba-ma.md
       04-two-design-bases.md
+      05-merging-the-two-design-bases.md
       README.md
       in-your-sector.md
     module-4-governance-primitives/
@@ -72,6 +73,9 @@ ai-governance-course/
       README.md
       in-your-sector.md
   resources/
+    course-notes/
+      M03-CN-01-safety-security-interface.md
+      README.md
     glossary.md
     in-your-sector-template.md
     progress-tracker.md

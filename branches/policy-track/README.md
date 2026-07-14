@@ -8,6 +8,7 @@ After this module, a student will be able to:
 - Analyze AI-enabled influence and commodity-market-manipulation cases.
 - Apply the three deterrence forms — punishment, denial, resilience.
 - Argue the standards gap for a facility or sector.
+- Distinguish the founding gap (no design basis was ever required) from the interface gaps (an existing duty that does not reach the AI), and sort each into process gaps and authority gaps.
 
 
 For the learner who wants to **produce** a consequence and governance analysis. The Democratic Safeguards material, deterrence theory, and the standards-gap argument. Ends by pointing into the capstone with a policy deliverable.

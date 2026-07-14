@@ -16,6 +16,8 @@ I've pulled together just enough here to convey the layout and the pedagogical i
 - Are the **learning objectives** the right targets, and are they pitched at the right level?
 - Does the **two-design-bases** distinction (the intellectual core, in Module 3 below) land clearly, or does it need more scaffolding before students meet it?
 - Is the **capstone** rigorous enough to be worth a student's time, and is the "both design bases required" gate the right bar?
+- Does the **merge** of the two design bases (Module 3, unit 05) do what it must — neither basis superior, both necessary, the seam owned and arbitrated rather than resolved by rank?
+- Do the **Course Notes** (`resources/course-notes/`) supply the depth beneath the headings, or does the module text still need to carry more of it itself?
 
 ## The premise
 
@@ -56,9 +58,9 @@ The full set of module objectives, so you can see the progression:
 
 **Module 2 — Consequence-Driven Thinking.** Contrast vulnerability-first and consequence-first reasoning; trace the CCE / CIE lineage and its engineering provenance; reframe a sector problem in consequence-first terms.
 
-**Module 3 — Design Basis Methodology.** Define and derive a design basis; explain DB → DBA → DBA-MA; **distinguish the two design bases (facility-class and AI) and the inherit-the-root / diverge-on-the-envelope relationship**; identify the Bright Line as the seam between them.
+**Module 3 — Design Basis Methodology.** Define and derive a design basis; explain DB → DBA → DBA-MA; **distinguish the two design bases (facility-class and AI) and the inherit-the-root / diverge-on-the-envelope relationship**; identify the Bright Line as the seam between them; **reconcile the two as a managed interface rather than a hierarchy, and locate the arbitration point where their collisions are settled**.
 
-**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality tier measured against inherited consequences; describe how the Command Broker enforces the Bright Line in operation.
+**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality tier measured against inherited consequences; describe how the Command Broker enforces the Bright Line in operation and arbitrates collisions between the two design bases.
 
 ### Bridge
 
@@ -91,6 +93,10 @@ The reason the AI cannot simply be folded into the facility's design basis is th
 Same consequence root, different adversary envelope, different reachability — therefore two design bases.
 
 The two meet at a seam with a name: the **Bright Line** — the boundary, defined in the AI-DB, that keeps the AI from reaching the consequences the FC-DB says must not happen. Read that way, the governance primitives of Module 4 are not a grab-bag; they are the machinery of the second design basis. Criticality tiering is *how much does this AI's failure matter, measured against the inherited consequences.* The Command Broker is what enforces the Bright Line in live operation.
+
+Note the word *inherits*, because it carries a trap. What is inherited is **consequence, not authority**. The AI-DB does not thereby become the junior document: at the seam the two bases are co-equal, and neither settles a collision by outranking the other. Assert the facility's primacy and you hand the AI's real risks to a design basis that never enumerated them; assert the AI's and it governs a facility in which it has no standing. The merge is therefore a **managed interface** — the seam itself becomes the governed object, owned by someone, with a duty to detect conflict before acting and a fallback when conflict cannot be removed. That is not a novel invention: it is what the NRC did when two co-equal design bases, safety and security, met in one plant (10 CFR 73.58). Where the nuclear world discharges that duty through a review board on human time, the AI case must discharge it at runtime — and **the Command Broker is the arbiter of design basis collisions.** The unit that carries this argument (Module 3, unit 05) is written out alongside the one above.
+
+One further consequence, which turns out to be the strongest practical argument the course can make. If a supplier's model change triggers a re-test, that trigger has to be written into a contract, and the contract requirements have to come from somewhere: they come from the AI design basis, as does the spine of the acceptance test plan. The AI-DB is therefore not a binder document — it is the **source document for the purchase order**. Which means it has to be written so that every clause yields a verifiable acceptance criterion. An AI-DB that says *the system shall behave safely* gives the procurement engineer nothing to require and the test engineer nothing to check. The capstone rubric now holds students to exactly that.
 
 | | Facility-class DB (FC-DB) | AI design basis (AI-DB) |
 |---|---|---|

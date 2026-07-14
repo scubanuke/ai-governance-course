@@ -19,6 +19,8 @@ Here is the part to teach hard, because it is the reason the AI cannot simply be
 
 The AI-DB *inherits* the facility's must-not-happen consequences. The AI's failure matters precisely because it can reach into the physical consequence set the FC-DB already named. So you do not invent a fresh consequence anchor for the AI — you inherit the facility's and ask how the AI can reach it. The AI-DB may also *extend* that set with consequences the physical design basis never contemplated: an integrity consequence, an influence consequence, a loss of trustworthy state that has no kinetic equivalent.
 
+Read that word carefully. What is inherited is **consequence, not authority**. The AI-DB takes the facility's must-not-happens as its own anchor; it does not thereby become the junior document, answerable to the FC-DB and governed by it. At the seam the two bases are co-equal, and neither settles a conflict by outranking the other. Unit 05 takes up what that means and how the two are merged in practice.
+
 But the adversary envelope is a different animal entirely. The facility's envelope is physical and kinetic. The AI's envelope is model manipulation, data poisoning, prompt injection, and autonomy drift — the moment the agentic system crosses into safety-critical territory, which is the boundary you met back in Module 1. A facility hardened against every physical threat in its envelope can still be driven straight into its own forbidden consequences through an adversary envelope its FC-DB never looked at.
 
 That divergence is the whole argument. **Same consequence root, different adversary envelope, different reachability — therefore two design bases.**

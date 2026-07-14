@@ -18,6 +18,30 @@ That prior question has a consequence that matters enormously over time. A desig
 
 The design-basis lens also sorts what it finds. Gaps come in two kinds: **process gaps**, closable by administrative action within existing authority, and **authority gaps**, which require new statutory authority to close. This sorting is what makes the analysis actionable rather than merely critical — it tells a policymaker which problems a sector can fix itself and which ones require Congress. Applied at the level of an agency, an enterprise, or a whole sector, the discipline "surfaces the same order of findings": the absence of a formal design basis is itself a structural vulnerability that conventional risk assessment never captures.
 
+## The interface gaps: where an existing duty runs out
+
+The founding gap is an absence — no design basis was ever required. There is a second kind of gap, and it is more awkward, because here the duty *exists* and simply does not reach.
+
+Module 3 established the pattern with a nuclear worked example: where two co-equal design bases meet in one facility, the regulator made the **interface** the governed object, obliging the licensee to assess and manage conflict between them before acting *(see Course Note M03-CN-01)*. That duty is real, it is enforceable, and in critical infrastructure the operator already carries it or a sector analogue of it. Nothing exempts a conflict merely because one side of it now originates in a model.
+
+Three things break it, and each is a distinct policy gap rather than a technical inconvenience.
+
+**Cadence.** The duty operates on *changes*, and presumes a change is a discrete, planned, reviewable event. Model updates, retraining cycles, revised prompts, and drift under a shifting input distribution do not arrive as change tickets. A review-board regime cannot convene against a system that changes between meetings.
+
+**Discovery point.** The duty finds conflict *before implementation*. AI collisions surface at runtime. Pre-implementation review remains necessary and has stopped being sufficient — which is the governance argument for arbitration at decision speed, not merely the engineering one.
+
+**Reach.** This is the sharpest of the three. The operator remains accountable for the AI's design basis but does not control it: the corpus it did not assemble, the weights it cannot inspect, the release cadence set outside the fence line by parties owing no duty to the interface at all. Accountability without control is not a diligence failure. It is a structural mismatch, and no amount of operator effort closes it.
+
+## Contract is not regulation
+
+There is a partial fill available today, and its limits are the policy argument.
+
+An operator procuring AI-enabled equipment executes an acceptance test plan and writes requirements into the contract — including the trigger that fires a reduced re-test when the supplier revises the model substantively. Those requirements and that test plan are both derived from the AI design basis, which is what makes the AI-DB a procurement instrument rather than a binder document. Where the operator has leverage, this works.
+
+But it reaches only as far as the leverage does. It stops at the **sub-tier** — the model provider beneath the vendor, who will not negotiate terms with a single buyer and whose update cadence is set globally. And a flow-down clause binds whoever you had the market power to bind, while a statutory duty binds everyone.
+
+Note what the nuclear regime did here, because it is the sharpest available precedent: it did not rely on purchase orders. It placed a reporting duty **directly on suppliers** of safety-relevant components — reaching non-licensees, their directors and officers, throughout the supply chain, by force of statute rather than contract. Whether the AI case needs an equivalent — a genuine, non-negotiable duty on model suppliers to critical infrastructure, rather than a term the strongest buyers can extract and the weakest cannot — is the live policy question this unit hands you. It is an **authority gap**, in the sorting below, not a process gap: no operator can close it from inside its own procurement department.
+
 ## The case for mandatory standards
 
 The policy conclusion follows from the deterrence unit. Denial-based deterrence requires a mandatory floor, and voluntary measures cannot supply one; therefore "the deterrence posture required by the current threat environment cannot be constructed from voluntary commitments and information sharing alone." The institutional mechanism that closes the gap "between awareness and mandate is a mandatory standards regime."
