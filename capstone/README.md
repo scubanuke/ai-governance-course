@@ -18,7 +18,12 @@ Pick a real facility in the sector you chose at Module 0. Both branches analyze 
 
 Same requirement (address both design bases), different deliverable form.
 
-**See the worked example first.** A fully worked pass through the whole method — for a water treatment plant, with short versions of both branch deliverables — is in [`resources/worked-example-water-treatment.md`](../resources/worked-example-water-treatment.md). Read it as a model answer before you start: it shows what "both design bases, joined at the Bright Line" looks like on a real facility, and the checklist at its end is exactly what the shared rubric grades.
+**See the worked examples first.** Two fully worked passes through the whole method are available as model answers, and you should read at least one before you start:
+
+- [`resources/worked-example-northgate-bulk-electric.md`](../resources/worked-example-northgate-bulk-electric.md) — the **Northgate Control Center**, the persistent bulk-electric spine you have followed since Module 0. Because you have watched it accumulate one artifact per module, it shows the *whole* record a capstone assembles, including the tier worksheet, the Bright Line determination, and the Command Broker specification.
+- [`resources/worked-example-water-treatment.md`](../resources/worked-example-water-treatment.md) — a compact single-pass example in a *second* sector (water), with short versions of both branch deliverables. Read it to confirm the method travels off energy.
+
+Each shows what "both design bases, joined at the Bright Line" looks like on a real facility, and the checklist at its end is exactly what the shared rubric grades.
 
 ## Units, in order
 
