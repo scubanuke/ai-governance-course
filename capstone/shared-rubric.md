@@ -6,6 +6,8 @@ This rubric grades both branches on the same fundamentals, then adds branch-spec
 
 Grade in three passes, in order: the gate, the shared fundamentals, then the branch-specific criteria. A deliverable that fails the gate is not scored further.
 
+Two fully worked model answers are calibrated to this rubric: the persistent [Northgate bulk-electric spine](../resources/worked-example-northgate-bulk-electric.md) (its Stage 9 is written to the standard a strong submission should meet) and the compact [water-treatment example](../resources/worked-example-water-treatment.md) in a second sector. Read either as "what good looks like" before you self-grade.
+
 ## Pass 1 — Gating requirement: both design bases
 
 Before anything else is scored, the deliverable must address **both** design bases — the facility-class design basis (FC-DB) and the AI design basis (AI-DB). A capstone that addresses only one does not pass, regardless of how well that one is done. This is the single non-negotiable, because the two-DB distinction is what the course exists to teach.

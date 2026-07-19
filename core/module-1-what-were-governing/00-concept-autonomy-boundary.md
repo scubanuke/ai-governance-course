@@ -29,6 +29,8 @@ Locate the three categories against it. Generative AI sits well back from the bo
 
 Two things determine which side a system is on: **autonomy** (can it act without a human authorizing the step?) and **safety-critical reach** (can that action arrive at a must-not-happen consequence?). Neither alone crosses the line. High autonomy over something trivial is a nuisance, not a hazard. Deep reach into a critical function under tight human control is ordinary, well-understood engineering. It is the *combination* — self-directed action with a path to catastrophe — that defines the boundary this course exists to govern.
 
+> **→ Worked example.** The course's spine facility, the **Northgate Control Center**, shows both sides of this line at once. Its real-time switching-and-protection advisor holds self-directed reach into a function whose failure is catastrophic, and sits *across* the boundary; its documentation assistant does not. Same facility, same AI system, opposite sides of the line — see [`resources/worked-example-northgate-bulk-electric.md`](../../resources/worked-example-northgate-bulk-electric.md).
+
 ## Where this points
 
 You have now met, in plain form, the line the rest of the course sharpens into a tool. In Module 3 you will learn that a facility's must-not-happen consequences are named by its design basis, and that the AI operating there needs its own. In Module 4 the boundary gets an operational name — the **Bright Line** — and a mechanism that enforces it. For now, hold the concept: what we are governing is not "AI." It is the crossing, by a self-directed system, into territory where it can cause what must not be allowed to happen.

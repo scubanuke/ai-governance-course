@@ -14,6 +14,8 @@ The most important thing to understand before you choose: **your sector does not
 
 The nuclear, energy, and data-center material you will meet later are **worked examples** — the places where this discipline already exists or is actively being carved. They are there to show you the method in motion, not to fence off who the method is for. The method itself is sector-agnostic. If you work in water, communications, transportation, healthcare, financial services, chemical, or anywhere else, you walk the exact same core, you study the energy carve-outs as models, and your capstone becomes the more valuable exercise: *derive the facility class for a facility in my sector, from scratch.* That is not a consolation path. That is the method doing the thing it was built to do.
 
+> **→ Worked example.** The most complete of these is the **Northgate Control Center**, the bulk-electric spine carried from here all the way to the capstone — [`resources/worked-example-northgate-bulk-electric.md`](../../resources/worked-example-northgate-bulk-electric.md). Study it as a model of the method in motion; it does not change the sector *you* carry.
+
 So do not pick based on where the frameworks already exist. Pick based on where you can reason well and where the stakes are real.
 
 ## Where this is heading
