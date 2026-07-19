@@ -28,6 +28,8 @@ The course's claim is simple to state and demanding to execute: the design-basis
 
 You will notice the nuclear and energy examples throughout. They are worked examples — the sectors where this discipline already lives or is being carved — not the boundary of where the method applies. The method is sector-agnostic. Which is why the very next thing this course asks you to do is choose the sector you will carry through all of it.
 
+> **→ Worked example — the spine.** One worked example runs the entire length of the course: the **Northgate Control Center**, a fictional bulk-electric transmission operator deploying a generative-AI operations advisor. It is introduced here and reappears in every module, gaining one artifact at a time, until it becomes a complete capstone record. Read it end-to-end whenever you like — [`resources/worked-example-northgate-bulk-electric.md`](../../resources/worked-example-northgate-bulk-electric.md) — or just follow the pointers as they appear. It is a *worked example*, not the course's sector: yours is the one you pick next.
+
 ## In your sector
 
 Before you pick, sit with the gap in your own terms. For the sector you have in mind, ask: *is there anywhere in it today where someone is required to state, in advance and in writing, the bounded set of conditions a critical function is engineered to withstand — and be held to it?* If the answer is yes, you have a rare head start. If the answer is no, you have just located, in your own sector, the exact gap this course exists to close.

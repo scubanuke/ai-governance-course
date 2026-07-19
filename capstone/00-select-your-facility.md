@@ -4,6 +4,8 @@
 
 This is where everything you have carried since Module 0 comes to rest on a single, real target. You picked a sector at the start; you mapped it onto the method at the bridge; you chose a branch. Now you choose the **one facility** you will apply the whole method to. Both branches — OT and policy — analyze the *same* facility; only the deliverable differs. Choose well, because you will live inside this choice for the rest of the capstone.
 
+> **→ Two facilities are already worked for you as models.** The persistent [Northgate Control Center](../resources/worked-example-northgate-bulk-electric.md) (bulk-electric) is the spine you followed through every module; the [water-treatment plant](../resources/worked-example-water-treatment.md) is a compact example in a second sector. Study either as a picture of a well-chosen facility carried all the way through — then choose your *own*, in your own sector. The models are there to calibrate the choice, not to be the choice.
+
 ## What makes a good capstone facility
 
 A workable facility sits between two failure modes. Too **trivial**, and the method has nothing to bite on — there is no must-not-happen consequence worth a design basis, and the exercise becomes a paperwork drill. Too **unbounded**, and you cannot finish — "the electric grid" or "the financial system" is not a facility, it is a sector, and it has no single design basis you could actually derive. Aim for the middle: a facility concrete enough to name and bounded enough to analyze in the time you have.
