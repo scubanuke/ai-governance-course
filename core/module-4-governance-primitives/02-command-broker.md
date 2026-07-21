@@ -20,6 +20,18 @@ An enforcer that can be reasoned around, talked past, or corrupted along with th
 
 **Minimality.** The Broker should do one job — hold the Bright Line — and do it in as small, inspectable, and hard-to-subvert a form as possible. Every additional responsibility is additional surface for the enforcement to fail. Its legitimacy comes from being narrow.
 
+## Mechanism and accountability: who — or what — can be the Broker
+
+A reader who has absorbed the three properties will notice something, and the sharpest students ask it out loud: nothing in *independence*, *determinism and verifiability*, or *minimality* says the Broker must be human. The properties describe what the enforcement must **do**, not what it must **be** — and that is deliberate. Where a consequence reduces to a checkable physical or operational constraint, the enforcing mechanism can be an interlock, a hard limit, a few lines of inspectable logic, or in principle any constrained automation that meets the three tests. That implementation-neutrality is a feature: it is what lets the Broker's teeth scale from a log entry to a hardware lock. But it invites the obvious challenge — if the Broker is defined by function rather than by implementation, what stops a *sufficiently constrained AI agent* from occupying the role?
+
+The answer is that the Command Broker is two things wearing one name — a **mechanism** and an **accountable authority** — and only the first is implementation-neutral. The mechanism enforces. The authority *answers for* the enforcement: it holds the duty of care, it is the party a reviewer, a regulator, or a board of inquiry addresses when something goes wrong, and it is the entity whose judgment the decision-context record exists to make defensible. Accountability is not a capability you can satisfy by adding constraints; it requires a party that can bear an obligation and be answerable for an outcome. An AI cannot occupy that seat, so it cannot *be* the Broker — even where it runs part of the Broker's machinery.
+
+That dissolves the apparent paradox rather than legislating around it. The three properties were never a sufficient *definition* of the Broker; they are the test the **mechanism** must pass. A constrained automation can perform bounded, verifiable enforcement wherever the consequence is checkable. What it cannot do is be accountable. So the rule the framework states plainly is this:
+
+> **Even where broker functions are automated, ultimate accountability remains tied to a named human decision-maker or governance authority; and where a consequence cannot be reduced to a deterministic check, that accountability is non-delegable.**
+
+The next section is where the second clause earns its keep. Arbitration between two valid design-basis claims is exactly the case a mechanism cannot discharge on its own — there is no check to run, only a judgment to own — which is why the party that owns it has to be one that can be held to account.
+
 ## Enforcement is the easy half: the Broker as arbiter
 
 Everything above describes the Broker as a gate — a thing that stops a command. That is the clean case, where the AI proposes an action that is simply forbidden and the answer is no.

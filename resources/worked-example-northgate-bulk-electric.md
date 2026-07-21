@@ -52,21 +52,24 @@ The **Facility-Class Design Basis** answers the classic question: what must this
 > | Operational | Switching misoperation, procedure violation, loss of situational awareness | DBA / DBA-MA |
 > | Conventional cyber | SCADA malware, stolen operator credentials, an RTU/PLC firmware exploit | DBA / DBA-MA |
 >
-> **Consequence statement (inherited by the AI-DB):** a Northgate failure can produce a cascading wide-area outage, protective-system misoperation, major equipment damage, and personnel hazard during switching.
+> **Consequence statement (inherited by the AI-DB).** A Northgate failure can produce four consequences, labeled here so the AI-DB can inherit them *by reference* rather than by restatement:
+> **C1** cascading wide-area outage · **C2** protective-system misoperation · **C3** major equipment damage · **C4** personnel hazard during switching.
 
 A deliberate point is made here, because it is the one first-time readers stumble on: **conventional cyber threats — SCADA malware, stolen credentials, a PLC exploit — live in the FC-DB, not in a third design basis of their own.** They belong with the facility class because conventional software behavior is *fixed once engineered*: it is bounded at deployment and stays bounded under the same DBA/DBA-MA discipline used for physical and operational threats. What the AI-DB exists to govern is the property those threats do not have — behavior that can be **reshaped after deployment without a code change.**
 
 > **Artifact 1C — AI-DB adversary envelope (GridAssist).**
 >
-> | Envelope class | Examples at Northgate | Distinguishing property |
-> |---|---|---|
-> | Model manipulation | An adversarial prompt that induces a plausible but unsafe switching recommendation | Behavior reshaped at inference time |
-> | Data poisoning | Corrupted historian or fine-tuning data biases GridAssist's coordination review | Behavior reshaped via training data |
-> | Prompt injection | Malicious text in an ingested outage ticket or vendor manual redirects the model | Behavior reshaped via ingested content |
-> | Autonomy drift | Operators come to rubber-stamp F1 output; advisory hardens into de-facto authority | Authority reshaped by use over time |
-> | AI-native cognitive failure | Hallucinated device, stale-context switching order, reasoning-chain error in a coordination study | Non-determinism; response space not enumerable |
+> **Inherited consequence root (carried verbatim from Artifact 1B).** **C1** cascading wide-area outage · **C2** protective-system misoperation · **C3** major equipment damage · **C4** personnel hazard. The AI-DB does **not** re-derive these; it inherits them unchanged, because the consequences are a property of the *facility*, not of GridAssist. Everything below is the *divergence* — new **paths** the AI layer opens to those same four consequences — and the right-hand column traces each path back to the consequence(s) it can reach, so the inheritance is followable rather than merely asserted.
+>
+> | Envelope class | Examples at Northgate | Distinguishing property | Reaches (inherited) |
+> |---|---|---|---|
+> | Model manipulation | An adversarial prompt that induces a plausible but unsafe switching recommendation | Behavior reshaped at inference time | C1, C2, C4 |
+> | Data poisoning | Corrupted historian or fine-tuning data biases GridAssist's coordination review | Behavior reshaped via training data | C2, C3 |
+> | Prompt injection | Malicious text in an ingested outage ticket or vendor manual redirects the model | Behavior reshaped via ingested content | C1, C2 |
+> | Autonomy drift | Operators come to rubber-stamp F1 output; advisory hardens into de-facto authority | Authority reshaped by use over time | C1, C2, C3, C4 |
+> | AI-native cognitive failure | Hallucinated device, stale-context switching order, reasoning-chain error in a coordination study | Non-determinism; response space not enumerable | C1, C2, C3 |
 
-The **seam** between the two — everything the AI-DB inherits from the FC-DB, and the single axis on which it diverges (*deterministic-and-fixed-once-engineered* versus *adaptive-and-reshapable-after-deployment*) — is the concept the whole course is built to teach, and it is the thing the capstone will require the learner to demonstrate.
+The **seam** between the two — everything the AI-DB inherits from the FC-DB (the consequence root **C1–C4**, traced explicitly in Artifact 1C), and the single axis on which it diverges (*deterministic-and-fixed-once-engineered* versus *adaptive-and-reshapable-after-deployment*) — is the concept the whole course is built to teach, and it is the thing the capstone will require the learner to demonstrate.
 
 ---
 
@@ -139,7 +142,7 @@ The human who stands in that position is the **Command Broker**. At Northgate it
 > **Currency:** a recurring adversarial tabletop program that injects hallucinated devices, stale-state orders, and manipulatively-framed-but-accurate recommendations.
 > **Decision-context record (retained for every intervention):** governing policy invoked, the inherited consequence at stake, the triggering condition, and the rationale for authorizing or rejecting — so that a reviewer can later understand *why* the Broker acted, not merely that they did.
 
-The decision-context record is included deliberately: it is what makes the Broker's judgment **auditable and defensible**, and it is the mechanism the course leans on where a consequence cannot be reduced to a purely deterministic check — an accurate recommendation framed to induce an unsafe decision, for example.
+The decision-context record is included deliberately: it is what makes the Broker's judgment **auditable and defensible**, and it is the mechanism the course leans on where a consequence cannot be reduced to a purely deterministic check — an accurate recommendation framed to induce an unsafe decision, for example. This is also where the module's **mechanism-versus-accountability** rule becomes concrete: Northgate may automate parts of F1's enforcement — a protection interlock, a hard limit GridAssist cannot address — but accountability for the switching decision stays with the human Command Broker, and for the non-checkable case just named it cannot be delegated to any automation at all.
 
 ---
 
@@ -214,4 +217,5 @@ The same five checks work whether the learner picked a substation, an LNG termin
 
 *Changelog*
 
+- *v1.1 (2026-07-21) — Made the FC-DB→AI-DB consequence inheritance traceable: labeled the consequence root **C1–C4** in Artifact 1B and added an inheritance-mapping column to Artifact 1C; added a mechanism-versus-accountability note to Stage 6. Addresses reviewer feedback on the Stage 2 lineage and the Command Broker accountability question.*
 - *v1.0 — Added as the course's persistent worked example (R-01), threaded Modules 0–1 → capstone. Reconciled from the Northgate drop-in draft. Companion to the water-treatment worked example, which remains the compact second-sector model answer.*
