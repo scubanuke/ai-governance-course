@@ -2,13 +2,13 @@
 
 > **Part of:** Core / Module 4 — the AI design basis's toolkit
 
-The Bright Line is drawn at design time. The criticality tier is assigned at design time. But a facility runs in real time, with a live AI issuing real commands, and a boundary that exists only on paper enforces nothing. This unit is the primitive that makes the Bright Line hold while the system is running. It is the **Command Broker**, and it is the runtime half of the AI design basis.
+The Bright Line is drawn at design time. The criticality band is assigned at design time. But a facility runs in real time, with a live AI issuing real commands, and a boundary that exists only on paper enforces nothing. This unit is the primitive that makes the Bright Line hold while the system is running. It is the **Command Broker**, and it is the runtime half of the AI design basis.
 
 ## What the Command Broker is
 
-The **Command Broker** is the construct that sits between the AI and the functions it can act on, and mediates every command the AI issues before that command reaches the controlled system. It checks each proposed action against the Bright Line criteria, and it does not pass an action that would cross the line. Where the Bright Line defines the boundary and the criticality tier says how firmly it must be held, the Command Broker is what actually stands at the boundary during operation and keeps it intact.
+The **Command Broker** is the construct that sits between the AI and the functions it can act on, and mediates every command the AI issues before that command reaches the controlled system. It checks each proposed action against the Bright Line criteria, and it does not pass an action that would cross the line. Where the Bright Line defines the boundary and the criticality band says how firmly it must be held, the Command Broker is what actually stands at the boundary during operation and keeps it intact.
 
-Put the three primitives together and the module resolves into a single mechanism. The Bright Line is *where* the seam is. The criticality tier is *how much* the seam matters. The Command Broker is *how the seam is held* while the facility runs. That is the AI-DB's toolkit, complete: a boundary, a measure, and an enforcer.
+Put the three primitives together and the module resolves into a single mechanism. The Bright Line is *where* the seam is. The criticality band is *how much* the seam matters. The Command Broker is *how the seam is held* while the facility runs. That is the AI-DB's toolkit, complete: a boundary, a measure, and an enforcer.
 
 ## What makes a Command Broker trustworthy
 
@@ -50,16 +50,22 @@ Two consequences follow, and they should govern how you design one.
 
 **Not every collision is resolved in the facility's favor.** Co-equal means co-equal. Where the AI-DB has *extended* the consequence set with something the physical basis never contemplated — an integrity consequence, a loss of trustworthy state — the Broker may hold a line the FC-DB never drew. Deference to the physical basis is a design choice you make deliberately, on the record, for stated reasons. It is not a law of nature, and a framework that assumes it has quietly reintroduced the hierarchy Module 3 spent a unit dismantling.
 
-## Enforcement scaled to the tier
+## Enforcement scaled to the band
 
-The Command Broker is where the criticality tier from the last unit is cashed out. For a lowest-criticality system, the Broker may be light — a check, a mediation, a log. For a highest-criticality system, holding the Bright Line may demand the strongest available enforcement: independent interlocks, hard limits the AI cannot address, a control lock and an independent reset that no amount of model misbehavior can override. The tier sets the strength; the Broker delivers it. This is the sense in which the three primitives are one system rather than three ideas — the tier's number becomes the Broker's teeth.
+The Command Broker is where the criticality band from the last unit is cashed out. For a lowest-criticality system, the Broker may be light — a check, a mediation, a log. For a highest-criticality system, holding the Bright Line may demand the strongest available enforcement: independent interlocks, hard limits the AI cannot address, a control lock and an independent reset that no amount of model misbehavior can override. The band sets the strength; the Broker delivers it. This is the sense in which the three primitives are one system rather than three ideas — the band's demand becomes the Broker's teeth.
 
 *(In this framework the Command Broker carries a distinct identity — the CB family of instruments — and should not be confused with the separate communications design basis. It is an enforcement construct, not a communications one.)*
 
 ## Where this goes
 
-With the Command Broker, the AI design basis has all three of its working parts, and the core of the course is complete: you can now name a consequence root, derive a design basis for a facility, recognize that the AI operating there needs its own, draw the Bright Line between them, tier its criticality, and specify what must enforce it in operation. The branches take this machinery deeper — the OT track builds the Command Broker and Bright Line at the architecture level and works the assessment tiering; the policy track analyzes what happens when this machinery is absent or defeated. The capstone makes you produce it. Everything from here uses what this module built.
+With the Command Broker, the AI design basis has all three of its working parts, and the core of the course is complete: you can now name a consequence root, derive a design basis for a facility, recognize that the AI operating there needs its own, draw the Bright Line between them, band its criticality, and specify what must enforce it in operation. The branches take this machinery deeper — the OT track builds the Command Broker and Bright Line at the architecture level and works the TAF assessment; the policy track analyzes what happens when this machinery is absent or defeated. The capstone makes you produce it. Everything from here uses what this module built.
 
 ## In your sector
 
-For the Bright Line and criticality tier you have been developing, describe the Command Broker it would take to hold that line in live operation. What sits between your AI and the consequence? Is it independent of the AI, or does it quietly depend on the AI being well-behaved? Push on that last question — it is the one that most often reveals whether a Bright Line is really being enforced or only being described.
+For the Bright Line and criticality band you have been developing, describe the Command Broker it would take to hold that line in live operation. What sits between your AI and the consequence? Is it independent of the AI, or does it quietly depend on the AI being well-behaved? Push on that last question — it is the one that most often reveals whether a Bright Line is really being enforced or only being described.
+
+---
+
+*Changelog*
+
+- *2026-07-31 — Reconciled to the Consequence-Severity vocabulary: "criticality tier" → **criticality band** throughout. Method unchanged.*

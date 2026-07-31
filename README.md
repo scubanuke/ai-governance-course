@@ -1,14 +1,14 @@
 # Design Basis for AI Governance
 ### A self-paced course in consequence-anchored governance for critical infrastructure
 
-**Version 1.0 — complete course**
+**Version 1.1 — complete course**
 Author: Timothy E. Roxey, Eclectic Technologies
 
 ---
 
 ## What this is
 
-A self-paced set of instruction modules that teaches a method, not a catalog. The method is the engineering **design basis** — the discipline nuclear safety has used for decades — applied to the governance of AI in critical infrastructure. By the end you should be able to take a real facility in your own sector and reason about it the way a design-basis engineer would: starting from consequence, bounding the adversary, and tiering criticality.
+A self-paced set of instruction modules that teaches a method, not a catalog. The method is the engineering **design basis** — the discipline nuclear safety has used for decades — applied to the governance of AI in critical infrastructure. By the end you should be able to take a real facility in your own sector and reason about it the way a design-basis engineer would: starting from consequence, bounding the adversary, and banding criticality.
 
 Most of critical-infrastructure protection has operated without this discipline. The course exists to close that gap, one sector at a time, with you supplying the sector.
 
@@ -47,7 +47,7 @@ When you pick your sector at Module 0, the course does not require that prebuilt
 
 ## Status and roadmap
 
-This is **v1.0**, a complete static repository — every core module, the bridge, both branches, and the capstone are fully written, with a glossary, a reading list, and the Course Notes collection in `resources/`. Sector selection and progress are handled by reading the routing above and working through the folders in order.
+This is **v1.1**, a complete static repository — every core module, the bridge, both branches, and the capstone are fully written, with a glossary, a reading list, and the Course Notes collection in `resources/`. Sector selection and progress are handled by reading the routing above and working through the folders in order.
 
 A later version is planned to become a **live form** that gathers a student's progress and, on request, produces an email summarizing where they are in the course. The seed for that lives in [`resources/progress-tracker.md`](resources/progress-tracker.md). It is a design placeholder for now, not a working feature.
 
@@ -69,6 +69,11 @@ A later version is planned to become a **live form** that gathers a student's pr
 *Design basis is the discipline that makes safety engineering rigorous. This course argues it should make AI governance rigorous too.*
 
 ---
+
+## Changelog
+
+- **v1.1 (2026-07-31) — Consequence-Severity vocabulary reconciliation.** Brought the course into line with the reformed instrument corpus (TAF v2.6): the AI-DB severity scale is now the **criticality-band model** (Highest / Mid / Lowest) and the TAF's assessment axis is the **error class** (safety-critical / quality-of-service / compliance), two orthogonal axes. Retired the numeric "Tier 1/2/3" language and the band=class conflation throughout — modules, branches, capstone, worked examples, glossary, and nav. Unit filenames are unchanged (per conventions); materially reworded units carry a changelog note. Method and worked classifications unchanged.
+- **v1.0 — complete course.** Every core module, the bridge, both branches, and the capstone, with glossary, reading list, and Course Notes.
 
 ## Publish on GitHub Pages
 

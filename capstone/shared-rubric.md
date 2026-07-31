@@ -24,7 +24,7 @@ These are the method itself, and they are scored identically for OT and policy.
 - **Consequence-anchored root** — is each design basis anchored on a concrete consequence that must not happen, stated in the facility's own terms rather than as a vague category or a risk score?
 - **Inherit-and-diverge** — does the AI-DB correctly *inherit* the facility's consequence root and *diverge* on the adversary envelope, rather than re-inventing the anchor or reusing the physical envelope? This is the most common place strong-looking work quietly fails.
 - **Bounded adversary envelope** — is each adversary bounded rather than chased, with what is *outside* the envelope named on purpose, and are the two envelopes (physical vs. AI-facing) correctly distinguished?
-- **Criticality tiering** — is the AI placed in the right tier, *measured against the inherited consequences*, with the tier's obligations actually followed rather than asserted?
+- **Criticality banding** — is the AI placed in the right band, *measured against the inherited consequences*, with the band's obligations actually followed rather than asserted?
 - **The managed seam** — is the relationship between the two design bases handled as a *managed interface* rather than a hierarchy? A deliverable that resolves every collision by declaring one basis superior has not done the work. Look for three things: a named owner of the seam, a stated point at which conflict is detected (acceptance, declared change, or runtime), and an arbiter for collisions that surface too fast for human review.
 - **Sector fit** — does the work reflect the learner's real, named facility and sector, rather than a generic template that could be pasted onto any facility?
 

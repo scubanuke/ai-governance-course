@@ -37,7 +37,7 @@ The Bright Line is the boundary, defined in the AI-DB, past which the AI could r
 
 The 2021 Oldsmar intrusion — where an actor drove sodium-hydroxide dosing to 111 times normal and only a watching operator caught it — is the reference. The design-basis lesson is explicit: **do not assume the operator catches it.** The architecture must make the unsafe dose impossible, not merely observable.
 
-## Step 5 — Criticality tier *(demonstrates: place the AI in a tier against inherited consequences)*
+## Step 5 — Criticality band *(demonstrates: place the AI in a band against inherited consequences)*
 
 Measured against the inherited consequence — mass public-health harm, potentially irreversible — the dosing optimizer is **highest criticality**. The path from its failure to the consequence is short and, at Oldsmar, was nearly unbuffered. Highest criticality carries the heaviest obligations: hardest Bright Line enforcement, independent backstops, and no autonomous action outside the safe band.
 
@@ -66,7 +66,13 @@ Read as an answer key, the example makes each capstone objective concrete and gr
 - *Both design bases present* — the gate: an answer that stops at the FC-DB (harden the plant) and never reaches the AI-DB has missed the point, exactly as the rubric says.
 - *Consequence-anchored root* — look for a one-sentence, concrete must-not-happen ("unsafe water to 250,000 people"), not a category ("a cyber incident").
 - *Inherit-and-diverge* — look for the AI-DB inheriting the water consequence and diverging to a sensor-poisoning/model-manipulation envelope, not re-using the physical one.
-- *Bright Line and tier* — look for an observable line (the safe dosing band) and a tier justified by reach to the consequence (highest, per Oldsmar), not asserted.
+- *Bright Line and band* — look for an observable line (the safe dosing band) and a band justified by reach to the consequence (Highest, per Oldsmar), not asserted.
 - *Enforcement* — look for a gatekeeper independent of the AI (the deterministic governor / physical interlock), not a human who merely watches a dashboard.
 
 The same five checks work whether the student picked water, an LNG terminal, a substation, or a data center. The sector changes; the method — and the way you grade it — does not.
+
+---
+
+*Changelog*
+
+- *2026-07-31 — Reconciled to the Consequence-Severity vocabulary: "criticality tier" → **criticality band**.*

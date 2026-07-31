@@ -21,7 +21,7 @@ Authoritative external sources behind the course, grouped by theme. The author's
 
 - **ISA/IEC 62443** series — industrial automation and control systems security: the zone-and-conduit model, Security Levels, and the seven Foundational Requirements. The standard the OT branch maps against.
 - **IEEE 1012** — System, Software, and Hardware Verification and Validation. The V&V baseline the cognitive-AI framework extends.
-- **IEC 61508** — Functional safety and Safety Integrity Levels (SIL); the analog for the three-tier criticality model.
+- **IEC 61508** — Functional safety and Safety Integrity Levels (SIL); the analog for the criticality-band model.
 - **NIST AI Risk Management Framework (AI RMF 1.0, 2023)** — the govern/map/measure/manage structure the governance analysis operationalizes.
 - **NIST SP 800-82** — Guide to Operational Technology (OT) Security, for control-system context.
 - The **Hybrid Formal Methods for GenAI in ICS** white paper and its "Grand Challenge" (the author's foundational paper) — the two-layer verification argument and the four candidate cognitive-layer verification techniques the IEEE V&V unit builds on. High-assurance precedents it draws on: **DARPA HACMS**, **seL4**, **CertiKOS**.

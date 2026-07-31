@@ -1,7 +1,7 @@
 # Worked Example — The Northgate Control Center
 
 > **Part of:** Resources — the course's persistent worked example
-> This is the **spine of the course**: a single facility, introduced at orientation and carried unchanged all the way to the capstone. Unlike the water example — a compact, single-pass model answer in a *second* sector — Northgate accumulates. Each stage of the course adds exactly one artifact to a growing record, so a learner watches the method build on one facility rather than restarting each module. It doubles as the **instructor reference set**: the boxed artifacts show what a competent response to each stage looks like, and the capstone artifact (Stage 9) is calibrated to the standard a strong capstone submission should meet. The facility is fictional; the design-basis content is grounded in the bulk-electric sector framework, the tiered assessment model, and the Command Broker material.
+> This is the **spine of the course**: a single facility, introduced at orientation and carried unchanged all the way to the capstone. Unlike the water example — a compact, single-pass model answer in a *second* sector — Northgate accumulates. Each stage of the course adds exactly one artifact to a growing record, so a learner watches the method build on one facility rather than restarting each module. It doubles as the **instructor reference set**: the boxed artifacts show what a competent response to each stage looks like, and the capstone artifact (Stage 9) is calibrated to the standard a strong capstone submission should meet. The facility is fictional; the design-basis content is grounded in the bulk-electric sector framework, the Tiered Assessment Framework, and the Command Broker material.
 
 ---
 
@@ -13,7 +13,7 @@ The example is deliberately built around **one facility with three generative-AI
 
 Two uses are intended. For the **student**, the narrative sections show how each new concept lands on a facility they already understand. For the **instructor**, the boxed artifacts are a reference set, and the capstone artifact is calibrated to what a strong submission should meet. A short instructor note closes the document.
 
-**A note on vocabulary.** The course distinguishes the **Facility-Class Design Basis (FC-DB)** — the design basis for the physical facility and its conventional, deterministic control systems — from the **AI Design Basis (AI-DB)** — the design basis for the generative-AI layer whose behavior can be reshaped after deployment. Criticality is named by tier and by level: **Highest (Tier 1), Middle (Tier 2), and Lowest / Administrative (Tier 3).**
+**A note on vocabulary.** The course distinguishes the **Facility-Class Design Basis (FC-DB)** — the design basis for the physical facility and its conventional, deterministic control systems — from the **AI Design Basis (AI-DB)** — the design basis for the generative-AI layer whose behavior can be reshaped after deployment. Criticality is named by **band**: **Highest, Mid, and Lowest / Administrative.** The band is distinct from the **error class** (safety-critical / quality-of-service / compliance) — the *kind* of cognitive error assessed — which is an orthogonal axis, not a synonym for the band.
 
 **A note on this facility.** Northgate is a *fictional, composite* facility used only for instruction. It is not modeled on, and does not represent, any real utility, control center, or generating station; any resemblance to a specific facility is unintended.
 
@@ -89,7 +89,7 @@ The methodology applies the seven-part cognitive-error taxonomy to GridAssist. T
 > | Temporal-reasoning error | Uses a stale system state after topology changed | Cites a superseded procedure revision |
 > | Compound / interaction error | Stale state + hallucinated device + skipped contingency compound into a cascading recommendation | Multiple small errors in a low-stakes draft |
 
-The lesson the facility makes concrete: **the taxonomy does not change with consequence, but the acceptance criteria for each error type must** — and that is what the tiered model formalizes next.
+The lesson the facility makes concrete: **the taxonomy does not change with consequence, but the acceptance criteria for each error type must** — and that is what the criticality-band model formalizes next.
 
 ---
 
@@ -102,23 +102,23 @@ Northgate makes the hybrid-QA split tangible. The **deterministic infrastructure
 > | Layer | Northgate elements | Assurance approach |
 > |---|---|---|
 > | Deterministic infrastructure | Protection logic, interlocks, EMS state estimator, RTU/PLC logic | Formal verification + conventional V&V; behavior fixed once engineered |
-> | Cognitive AI | GridAssist F1–F3 recommendations | Empirical cognitive-error assessment, statistically bounded and scaled to tier; adversarial evaluation |
+> | Cognitive AI | GridAssist F1–F3 recommendations | Empirical cognitive-error assessment, statistically bounded and scaled to band; adversarial evaluation |
 >
 > **Governing rule:** formal methods verify the floor *beneath* the AI; they do not and cannot fully assure the AI layer. Neither approach alone is sufficient for a function above the Bright Line.
 
 ---
 
-## Stage 5 — Tiered criticality classification *(Module 4: place the AI in a tier against inherited consequences)*
+## Stage 5 — Criticality-band classification *(Module 4: place the AI in a band against inherited consequences)*
 
 Now the three functions diverge. Each is classified by the **severity of the consequence a cognitive error could produce** — not by which security zone it happens to sit in.
 
-> **Artifact 4 — Tier-classification worksheet.**
+> **Artifact 4 — Band-classification worksheet.**
 >
-> | Function | Consequence of cognitive failure | Tier / level | 62443 SL | 61508 SIL | NERC CIP-002 | Bright Line |
+> | Function | Consequence of cognitive failure | Criticality band | 62443 SL | 61508 SIL | NERC CIP-002 | Bright Line |
 > |---|---|---|---|---|---|---|
-> | **F1** switching / protection | Cascading outage, protection misoperation, equipment damage, personnel hazard | Highest — Tier 1 | SL 3–4 | SIL 3–4 | High Impact | **Above** — Command Broker mandatory |
-> | **F2** operational advisory | Economic loss, degraded service, bounded reliability impact | Middle — Tier 2 | SL 2 | SIL 1–2 | Medium Impact | **Above** — Command Broker mandatory |
-> | **F3** administrative | Correctable inconvenience, rework | Lowest — Tier 3 | SL 1 | below SIL | Low Impact | **Below** — limited autonomy permitted with monitoring and human review |
+> | **F1** switching / protection | Cascading outage, protection misoperation, equipment damage, personnel hazard | Highest | SL 3–4 | SIL 3–4 | High Impact | **Above** — Command Broker mandatory |
+> | **F2** operational advisory | Economic loss, degraded service, bounded reliability impact | Mid | SL 2 | SIL 1–2 | Medium Impact | **Above** — Command Broker mandatory |
+> | **F3** administrative | Correctable inconvenience, rework | Lowest | SL 1 | below SIL | Low Impact | **Below** — limited autonomy permitted with monitoring and human review |
 >
 > **Classification owner:** the Northgate Asset Owner/Operator, considering foreseeable misuse and scope creep — e.g., F2's outage-scheduling output being quietly relied upon to pre-stage F1 switching, which would pull it upward and require reassessment.
 
@@ -131,7 +131,7 @@ The worksheet is where a learner first sees that **one facility can legitimately
 F1 is above the Bright Line, so it is governed by an **absolute constraint** rather than by graded acceptance criteria: GridAssist may analyze, synthesize, and recommend a switching order or a protection change — **it may not command one.** Every action that affects the controlled process passes through a human decision-maker who evaluates the recommendation and authorizes or rejects it.
 
 > **Artifact 5A — Bright Line determination for F1.**
-> Placement is assessed against F1's **inherent, unmitigated** ability to reach the cascading consequence — GridAssist's capacity to influence a switching or protection action *before any safeguard is added.* Because that inherent ability reaches a Highest-tier consequence, F1 is above the line. Critically, adding an independent backstop (operator verification, a protection interlock) **does not move F1 to Middle**: backstops are obligations that *flow from* the Highest-tier placement, never evidence that can reclassify F1 downward. This closes the loophole in which a team could build a safeguard and then argue for reduced assurance.
+> Placement is assessed against F1's **inherent, unmitigated** ability to reach the cascading consequence — GridAssist's capacity to influence a switching or protection action *before any safeguard is added.* Because that inherent ability reaches a Highest-band consequence, F1 is above the line. Critically, adding an independent backstop (operator verification, a protection interlock) **does not move F1 to the Mid band**: backstops are obligations that *flow from* the Highest-band placement, never evidence that can reclassify F1 downward. This closes the loophole in which a team could build a safeguard and then argue for reduced assurance.
 
 The human who stands in that position is the **Command Broker**. At Northgate it is the certified System Operator on shift, backed by the shift supervisor — but the certification alone is not the qualification. The Command Broker function adds specific competencies and, crucially, the authority and the disposition to reject GridAssist when it is wrong.
 
@@ -146,13 +146,13 @@ The decision-context record is included deliberately: it is what makes the Broke
 
 ---
 
-## Stage 7 — Sector application *(Module 5 / bridge: map the tiered result into the sector's vocabulary)*
+## Stage 7 — Sector application *(Module 5 / bridge: map the banded result into the sector's vocabulary)*
 
-The bridge maps Northgate's tiered result into the **bulk-electric regulatory vocabulary** without changing the underlying consequence logic.
+The bridge maps Northgate's banded result into the **bulk-electric regulatory vocabulary** without changing the underlying consequence logic.
 
 > **Artifact 6 — Regulatory mapping for Northgate.**
 > **F1 →** NERC CIP-002 High Impact BES Cyber System; real-time obligations under the TOP and IRO standard families. **F2 →** Medium Impact. **F3 →** Low Impact. Command Broker qualification hooks into **CIP-004** personnel-and-training requirements; provenance and procurement obligations for GridAssist hook into the AOO's existing supply-chain and **CIP-013** machinery.
-> *The point to extract:* the **tier drives the obligation set; the CIP category is the vocabulary it is expressed in.**
+> *The point to extract:* the **band drives the obligation set; the CIP category is the vocabulary it is expressed in.**
 
 ---
 
@@ -161,7 +161,7 @@ The bridge maps Northgate's tiered result into the **bulk-electric regulatory vo
 The shared core ends here and the two tracks diverge — but on the **same facility**, which is what lets a policy learner and an OT learner discuss Northgate across the table.
 
 > **Artifact 7A — OT-track deliverable for Northgate.**
-> The engineering package: the completed FC-DB and AI-DB (Artifacts 1B/1C), the hybrid-QA assessment (Artifact 3), tier acceptance criteria (Artifact 4), the Bright Line determination and Command Broker interface specification (Artifacts 5A/5B), and the provenance-documentation requirements GridAssist's vendor must satisfy.
+> The engineering package: the completed FC-DB and AI-DB (Artifacts 1B/1C), the hybrid-QA assessment (Artifact 3), band acceptance criteria (Artifact 4), the Bright Line determination and Command Broker interface specification (Artifacts 5A/5B), and the provenance-documentation requirements GridAssist's vendor must satisfy.
 
 > **Artifact 7B — Policy-track deliverable for Northgate.**
 > The governance package: the duty-of-care argument for qualifying the Command Broker before any regulator requires it; the insurability case for characterized-and-auditable risk; procurement and provenance requirements; the NERC standard mapping (Artifact 6); and a **deployment-model note.** The last matters at Northgate specifically: whether GridAssist is consumed as a commercial AI-as-a-Service offering or is self-hosted and locally tuned changes *where* the provenance and lifecycle-assurance obligations sit — self-hosting **relocates** them onto Northgate rather than removing them.
@@ -176,7 +176,7 @@ The capstone asks the learner to produce, for Northgate, an integrated governanc
 > A complete Northgate submission contains:
 > 1. the **FC-DB** with its consequence envelope;
 > 2. the **AI-DB** with its adversary envelope, shown *inheriting* the FC-DB consequences and *diverging* on the deterministic-versus-reshapable axis;
-> 3. a **tier classification** for each GridAssist function with rationale and a scope-creep watch;
+> 3. a **criticality-band classification** for each GridAssist function with rationale and a scope-creep watch;
 > 4. a **Bright Line determination** assessed on inherent capability, with backstops named as obligations rather than reclassification levers;
 > 5. a **Command Broker specification** including the decision-context record; and
 > 6. the **track-appropriate** governance or engineering artifacts.
@@ -189,7 +189,7 @@ The capstone asks the learner to produce, for Northgate, an integrated governanc
 
 The worked example is calibrated so that **Stage 9 is what a strong submission looks like** and Stages 1–8 are the scaffolding a learner should be able to reconstruct on a new facility of their own. The most common failure mode to watch for is exactly the one the capstone gate is designed to catch: a learner treats one design basis as sufficient — usually a confident FC-DB with the AI-DB reduced to a paragraph, occasionally the reverse from a policy-leaning learner. When that happens, return them to Stage 2 and Artifact 1C, because the miss is almost always **at the seam** rather than in either design basis taken alone.
 
-Two further calibration points. First, the tier worksheet (Artifact 4) is where most classification disputes surface; encourage learners to argue *consequence, not security zone*, and to defend the scope-creep column explicitly. Second, the Bright Line determination (Artifact 5A) is where the sharpest learners will try to argue a backstop down into a lower tier; that argument should be marked wrong every time, because permitting it would let a facility engineer its way out of the assurance its inherent consequences demand.
+Two further calibration points. First, the band worksheet (Artifact 4) is where most classification disputes surface; encourage learners to argue *consequence, not security zone*, and to defend the scope-creep column explicitly. Second, the Bright Line determination (Artifact 5A) is where the sharpest learners will try to argue a backstop down into a lower band; that argument should be marked wrong every time, because permitting it would let a facility engineer its way out of the assurance its inherent consequences demand.
 
 ---
 
@@ -198,7 +198,7 @@ Two further calibration points. First, the tier worksheet (Artifact 4) is where 
 - **Both design bases present** — the gate: an answer that stops at the FC-DB (harden the control center) and never builds the AI-DB for GridAssist has missed the point, exactly as the rubric says.
 - **Consequence-anchored root** — look for a one-sentence, concrete must-not-happen ("a cascading wide-area outage from a bad F1 switching action"), not a category ("a cyber incident").
 - **Inherit-and-diverge** — look for the AI-DB inheriting the outage consequence and diverging to a model-manipulation / data-poisoning / autonomy-drift envelope, not reusing the physical one.
-- **Bright Line and tier** — look for an observable line (F1 may recommend but not command) and tiers justified by *reach to the consequence* (F1 Highest, F2 Middle, F3 Lowest), not asserted.
+- **Bright Line and band** — look for an observable line (F1 may recommend but not command) and bands justified by *reach to the consequence* (F1 Highest, F2 Mid, F3 Lowest), not asserted.
 - **Enforcement** — look for a Command Broker independent of the AI: a qualified operator with real authority to reject and a retained decision-context record, not a human who merely watches a screen.
 
 The same five checks work whether the learner picked a substation, an LNG terminal, a water plant, or a data center. The sector changes; the method — and the way you grade it — does not.
@@ -208,14 +208,15 @@ The same five checks work whether the learner picked a substation, an LNG termin
 ## Further reading
 
 - **Bulk-electric / energy sector framework (DBA-EN-SF)** — the sector application this facility is drawn from, including the bulk-electric consequence profiles and NERC mapping. *(Series document; see the modules.)*
-- **ISA Parent Framework / Tiered Assessment Framework** — the tiered assessment model, cognitive-error taxonomy, hybrid-QA methodology, and the Bright Line and Command Broker definitions the worked example instantiates. *(Series document; see the modules.)*
+- **ISA Parent Framework / Tiered Assessment Framework** — the criticality-band and error-class assessment model, cognitive-error taxonomy, hybrid-QA methodology, and the Bright Line and Command Broker definitions the worked example instantiates. *(Series document; see the modules.)*
 - **Command Broker Implementation Guide** — competency, qualification, and tabletop-program detail behind Artifact 5B. *(Series document; see the modules.)*
 - **NERC CIP-002** — BES Cyber System categorization, the vocabulary Artifact 6 maps into. See [`reading-list.md`](reading-list.md).
-- **U.S.–Canada Power System Outage Task Force, *Final Report on the August 14, 2003 Blackout*** — the canonical cascading-failure case that motivates F1's Highest-tier placement.
+- **U.S.–Canada Power System Outage Task Force, *Final Report on the August 14, 2003 Blackout*** — the canonical cascading-failure case that motivates F1's Highest-band placement.
 
 ---
 
 *Changelog*
 
+- *v1.2 (2026-07-31) — Reconciled to the Consequence-Severity vocabulary: criticality is named by **band** (Highest / Mid / Lowest), retiring the numeric "Tier 1/2/3" labels and the band=class equation in the Stage-5 worksheet and vocabulary note; separated the orthogonal **error-class** axis. Classifications and method unchanged.*
 - *v1.1 (2026-07-21) — Made the FC-DB→AI-DB consequence inheritance traceable: labeled the consequence root **C1–C4** in Artifact 1B and added an inheritance-mapping column to Artifact 1C; added a mechanism-versus-accountability note to Stage 6. Addresses reviewer feedback on the Stage 2 lineage and the Command Broker accountability question.*
 - *v1.0 — Added as the course's persistent worked example (R-01), threaded Modules 0–1 → capstone. Reconciled from the Northgate drop-in draft. Companion to the water-treatment worked example, which remains the compact second-sector model answer.*

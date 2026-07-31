@@ -18,7 +18,7 @@ This hybrid split is the practical heart of the framework: prove what you can pr
 
 ## What cognitive assessment produces
 
-For the cognitive layer, verification-by-proof is replaced by a disciplined evidence-generating process, tuned by tier. Safety-critical (Tier 1) work demands exhaustive **domain characterization** — because AI behavior outside its characterized domain is simply unassessed and therefore unreliable — followed by structured-scenario, adversarial red-team, and regression testing, conservative quantitative acceptance criteria with justified confidence levels, and near-real-time monitoring of every output for inconsistency, confidence-uncertainty mismatch, and physical-constraint violations. Lower tiers keep the same shape at calibrated rigor, shifting to trend-based monitoring and periodic audits.
+For the cognitive layer, verification-by-proof is replaced by a disciplined evidence-generating process, tuned by error class. Safety-critical error-class work demands exhaustive **domain characterization** — because AI behavior outside its characterized domain is simply unassessed and therefore unreliable — followed by structured-scenario, adversarial red-team, and regression testing, conservative quantitative acceptance criteria with justified confidence levels, and near-real-time monitoring of every output for inconsistency, confidence-uncertainty mismatch, and physical-constraint violations. Lower-severity classes keep the same shape at calibrated rigor, shifting to trend-based monitoring and periodic audits.
 
 The evidence this yields — logged outputs, scenario results, acceptance-criteria records, monitoring flags, and crucially **system provenance documentation** (base model identity and version, fine-tuning records, guardrail characterization, configuration control) — is what stands in for a proof. It does not demonstrate the model cannot err. It demonstrates a characterized, monitored, traceable baseline that a regulator can have confidence in. That reframing — from proof of correctness to evidence of characterized reliability — is the mental shift the unit is teaching.
 
@@ -34,8 +34,14 @@ The framework draws a line OT engineers should keep crisp: "the Bright Line is a
 
 This framework did not appear from nowhere. It is the formalization of an earlier call to arms — the Hybrid Formal Methods white paper and its "Grand Challenge," which argued that five decades of industrial control had always produced quality-assurance methods to match each new technology *before* wide deployment, and that generative AI broke the pattern by deploying ahead of any verification framework. That gap — "50 years of proven quality assurance methods for traditional software in safety-critical applications; exactly zero mature, standardized frameworks for verifying the cognitive components of GenAI systems" — is the founding gap from Module 0 in its engineering form, and it is the root this V&V unit grows from.
 
-This is positioned as the natural next chapter of IEEE 1012 rather than a repudiation of it: the three-tier cognitive taxonomy lines up with 1012's integrity levels, Tier 1 aligns with the highest functional-safety integrity levels, and the whole approach operationalizes the govern/map/measure/manage structure of the NIST AI risk-management framework. It is complementary to 62443, which handles external compromise but not internal cognitive reliability — the seam the next unit takes up directly.
+This is positioned as the natural next chapter of IEEE 1012 rather than a repudiation of it: the three-error-class cognitive taxonomy lines up with 1012's integrity levels, the safety-critical error class aligns with the highest functional-safety integrity levels, and the whole approach operationalizes the govern/map/measure/manage structure of the NIST AI risk-management framework. It is complementary to 62443, which handles external compromise but not internal cognitive reliability — the seam the next unit takes up directly.
 
 ## For your capstone facility
 
 For your facility's AI, perform the split: list what belongs to the infrastructure layer (and can be formally verified) and what belongs to the cognitive layer (and must be statistically assessed). Then, for one cognitive function, state the domain you would characterize, the tests you would run, and the provenance you would record. That triple — domain, tests, provenance — is the V&V evidence package your OT deliverable will need to stand behind.
+
+---
+
+*Changelog*
+
+- *2026-07-31 — Reconciled to the Consequence-Severity vocabulary: the cognitive taxonomy is the three **error classes** (safety-critical / quality-of-service / compliance), retiring "Tier 1/2/3."*

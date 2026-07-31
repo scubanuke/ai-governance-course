@@ -5,7 +5,7 @@
 After this module, a student will be able to:
 
 - Derive both design bases — FC-DB and AI-DB — for a facility as engineering artifacts.
-- Apply TAF tiering, IEEE V&V, and 62443 mapping.
+- Apply the TAF, IEEE V&V, and 62443 mapping.
 - Place the Bright Line and Command Broker in an actual operational architecture.
 - Explain Local Sovereignty through the Aurora Disruptor case.
 

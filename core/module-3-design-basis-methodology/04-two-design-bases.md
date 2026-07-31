@@ -29,7 +29,7 @@ That divergence is the whole argument. **Same consequence root, different advers
 
 The two design bases are not independent. They meet at a seam, and in this framework the seam has a name: the **Bright Line.** The Bright Line is the boundary, defined in the AI-DB, that keeps the AI from being able to reach the consequences the FC-DB says must not happen. It is where the second design basis is fastened to the first.
 
-Everything you will meet in Module 4 sits on this seam. **Criticality tiering** is simply the question *how much does this AI's failure matter, measured against the inherited consequences?* The **Command Broker** is the construct that enforces the Bright Line in live operation. Read that way, Module 4 is not a grab-bag of governance primitives — it is the machinery of the second design basis.
+Everything you will meet in Module 4 sits on this seam. **Criticality banding** is simply the question *how much does this AI's failure matter, measured against the inherited consequences?* The **Command Broker** is the construct that enforces the Bright Line in live operation. Read that way, Module 4 is not a grab-bag of governance primitives — it is the machinery of the second design basis.
 
 ## The two, side by side
 
@@ -38,7 +38,7 @@ Everything you will meet in Module 4 sits on this seam. **Criticality tiering** 
 | **Object** | the facility / facility class | the AI operating in or over it |
 | **Consequence anchor** | physical & operational must-not-happens | **inherited** from the FC-DB; may **extend** with AI-specific consequences |
 | **Adversary envelope** | physical, kinetic, operational | model manipulation, data poisoning, prompt injection, autonomy drift |
-| **Primary instruments** | DBA / DBA-MA | Bright Line, criticality tiering, Command Broker |
+| **Primary instruments** | DBA / DBA-MA | Bright Line, criticality banding, Command Broker |
 | **Key boundary** | the facility threat envelope | the **Bright Line** — the seam back to the FC-DB |
 
 ## What this means for the rest of the course

@@ -1,6 +1,6 @@
 # Course Map — Design Basis for AI Governance
 
-**Version 1.0.** This is the syllabus for the complete course; the folders mirror it.
+**Version 1.1.** This is the syllabus for the complete course; the folders mirror it.
 
 The through-line is the **method** — how a design basis is derived and how a facility class is carved. The energy, nuclear, and data-center material are worked examples hanging off that spine, not the only supported paths.
 
@@ -28,7 +28,7 @@ The crown jewel. What a design basis is, borrowed from nuclear safety, and how y
 Closes with: *In Your Sector.*
 
 ### Module 4 — The governance primitives (the AI-DB toolkit)
-Reframed as the **machinery of the AI design basis**, all sitting on the Bright Line seam from Module 3. Bright Line Criteria (the seam itself), the three-tier criticality model (the AI-DB's severity scale, measured against inherited consequences), and the Command Broker (what enforces the Bright Line in operation). Not a grab-bag of primitives — the toolkit that builds and enforces the second design basis.
+Reframed as the **machinery of the AI design basis**, all sitting on the Bright Line seam from Module 3. Bright Line Criteria (the seam itself), the criticality-band model (the AI-DB's severity scale, measured against inherited consequences), and the Command Broker (what enforces the Bright Line in operation). Not a grab-bag of primitives — the toolkit that builds and enforces the second design basis.
 Closes with: *In Your Sector.*
 
 ---
@@ -43,7 +43,7 @@ What a facility class is and how one gets carved: the strategic-significance bou
 ## Branch — pick one
 
 ### OT track
-Design-basis derivation in depth and the assessment machinery: TAF tiering, IEEE V&V, 62443 mapping, Command Broker and Bright Line at the architecture level, and Local Sovereignty with the Aurora Disruptor as the canonical case. Prepares the learner to **produce a design basis or assessment**.
+Design-basis derivation in depth and the assessment machinery: the TAF (criticality bands and error classes), IEEE V&V, 62443 mapping, Command Broker and Bright Line at the architecture level, and Local Sovereignty with the Aurora Disruptor as the canonical case. Prepares the learner to **produce a design basis or assessment**.
 
 ### Policy track
 Consequence and governance analysis: the Democratic Safeguards material (Autonomous Influence Broker, AI-enabled market manipulation), the three deterrence forms, and the standards-gap argument. Prepares the learner to **produce a governance and consequence analysis**.
@@ -52,4 +52,4 @@ Consequence and governance analysis: the Democratic Safeguards material (Autonom
 
 ## Capstone — both branches, same target, both design bases
 
-Pick a real facility in your sector. **Both design bases are required of both branches.** OT learners *derive* both the FC-DB and the AI-DB and show the Bright Line seam between them; policy learners *analyze* both — the facility's consequence set and the AI's inherited-plus-extended set — and the governance gap each implies. A capstone that produces only one design basis is the incomplete answer the course exists to prevent. A shared rubric gates on both-DBs-present, then grades the fundamentals — consequence-anchored root, inherit-and-diverge, bounded adversary envelope, criticality tiering, and the managed seam between the two bases — with the branch-specific deliverable on top.
+Pick a real facility in your sector. **Both design bases are required of both branches.** OT learners *derive* both the FC-DB and the AI-DB and show the Bright Line seam between them; policy learners *analyze* both — the facility's consequence set and the AI's inherited-plus-extended set — and the governance gap each implies. A capstone that produces only one design basis is the incomplete answer the course exists to prevent. A shared rubric gates on both-DBs-present, then grades the fundamentals — consequence-anchored root, inherit-and-diverge, bounded adversary envelope, criticality banding, and the managed seam between the two bases — with the branch-specific deliverable on top.

@@ -8,7 +8,7 @@ Read this whole module as one thing: the machinery of the second design basis. M
 
 The **Bright Line** is the boundary, defined inside the AI-DB, that the AI must not cross because crossing it puts the AI within reach of the facility's must-not-happen consequences. It is drawn at exactly the reachability seam you identified in Module 3: on the near side, the AI's actions cannot arrive at the consequence root; on the far side, they can. The Bright Line is the line between those two territories, made explicit and committed to in advance.
 
-This is why the module insists these primitives are not a grab-bag. The Bright Line is the seam itself. Everything else in the AI-DB toolkit is defined relative to it: the criticality tiers measure how much is at stake on the far side of it, and the Command Broker is what holds it in live operation. Build the Bright Line correctly and the rest of the toolkit has a place to attach. Draw it wrong and nothing downstream can be right.
+This is why the module insists these primitives are not a grab-bag. The Bright Line is the seam itself. Everything else in the AI-DB toolkit is defined relative to it: the criticality bands measure how much is at stake on the far side of it, and the Command Broker is what holds it in live operation. Build the Bright Line correctly and the rest of the toolkit has a place to attach. Draw it wrong and nothing downstream can be right.
 
 ## Why it belongs to the AI-DB but points at the FC-DB
 
@@ -20,11 +20,11 @@ Because it is anchored on the shared consequence root, the Bright Line inherits 
 
 The name is a requirement, not a decoration. A Bright Line must be **bright**: unambiguous enough that, at any moment in operation, you can tell whether it has been crossed. This is what separates it from an ordinary risk threshold. Risk thresholds are graded and fuzzy — "elevated," "high," a score creeping upward — and in live operation a fuzzy boundary is unenforceable, because no one can say for certain, in the moment, which side of it the system is on. The Bright Line is deliberately the opposite: a boundary defined by explicit **criteria** — specific, pre-committed conditions and authorities whose crossing is legible in real time. It should be as close to binary as the domain allows: crossed or not crossed, with as little interpretation as possible standing between the two.
 
-Brightness is what makes the seam *governable*. A boundary you cannot reliably observe being crossed cannot be enforced, tiered, or audited. The criteria are what make the line bright, and the brightness is what makes the next two units possible.
+Brightness is what makes the seam *governable*. A boundary you cannot reliably observe being crossed cannot be enforced, graded, or audited. The criteria are what make the line bright, and the brightness is what makes the next two units possible.
 
 ## What this sets up
 
-You now have the seam. The two units that follow live on it. The **criticality tiers** ask how much rigor the far side of this particular Bright Line demands, measured against the severity of the consequence it guards. The **Command Broker** is the construct that stands at the line during operation and keeps it from being crossed. Hold the Bright Line as the fixed reference for both: one measures against it, the other enforces it.
+You now have the seam. The two units that follow live on it. The **criticality bands** ask how much rigor the far side of this particular Bright Line demands, measured against the severity of the consequence it guards. The **Command Broker** is the construct that stands at the line during operation and keeps it from being crossed. Hold the Bright Line as the fixed reference for both: one measures against it, the other enforces it.
 
 ## In your sector
 

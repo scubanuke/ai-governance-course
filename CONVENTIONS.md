@@ -50,7 +50,7 @@ Notes live in `resources/course-notes/`, one file per Note, and are cross-linked
 
 ## Versioning
 
-- The whole course carries a single version at the repository root (README and course-map), currently **1.0**.
+- The whole course carries a single version at the repository root (README and course-map), currently **1.1**.
 - Individual units do not carry their own version numbers in this repository; the course version governs.
 - When a unit changes materially, note it in a short changelog at the bottom of that unit rather than renaming the file.
 

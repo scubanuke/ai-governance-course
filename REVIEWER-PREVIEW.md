@@ -21,7 +21,7 @@ I've pulled together just enough here to convey the layout and the pedagogical i
 
 ## The premise
 
-Most of critical-infrastructure protection has operated without a formal design basis. The National Infrastructure Protection Plan never required any sector but nuclear to define one. The course exists to close that gap — to teach any practitioner, in any sector, to reason about a facility the way a design-basis engineer would: start from the consequence that must not happen, bound the adversary, and tier criticality. The student supplies the sector; the course supplies the method.
+Most of critical-infrastructure protection has operated without a formal design basis. The National Infrastructure Protection Plan never required any sector but nuclear to define one. The course exists to close that gap — to teach any practitioner, in any sector, to reason about a facility the way a design-basis engineer would: start from the consequence that must not happen, bound the adversary, and band criticality. The student supplies the sector; the course supplies the method.
 
 ## How the course is structured
 
@@ -60,7 +60,7 @@ The full set of module objectives, so you can see the progression:
 
 **Module 3 — Design Basis Methodology.** Define and derive a design basis; explain DB → DBA → DBA-MA; **distinguish the two design bases (facility-class and AI) and the inherit-the-root / diverge-on-the-envelope relationship**; identify the Bright Line as the seam between them; **reconcile the two as a managed interface rather than a hierarchy, and locate the arbitration point where their collisions are settled**.
 
-**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality tier measured against inherited consequences; describe how the Command Broker enforces the Bright Line in operation and arbitrates collisions between the two design bases.
+**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality band measured against inherited consequences; describe how the Command Broker enforces the Bright Line in operation and arbitrates collisions between the two design bases.
 
 ### Bridge
 
@@ -68,7 +68,7 @@ The full set of module objectives, so you can see the progression:
 
 ### Branches
 
-**OT track.** Derive both design bases as engineering artifacts; apply TAF tiering, IEEE V&V, and 62443 mapping; place the Bright Line and Command Broker in a real architecture; explain Local Sovereignty through the Aurora Disruptor case.
+**OT track.** Derive both design bases as engineering artifacts; apply the TAF, IEEE V&V, and 62443 mapping; place the Bright Line and Command Broker in a real architecture; explain Local Sovereignty through the Aurora Disruptor case.
 
 **Policy track.** Produce a consequence-and-governance analysis addressing both design bases; analyze AI-enabled influence and market-manipulation cases; apply the three deterrence forms; argue the standards gap for a sector.
 
@@ -92,7 +92,7 @@ The reason the AI cannot simply be folded into the facility's design basis is th
 
 Same consequence root, different adversary envelope, different reachability — therefore two design bases.
 
-The two meet at a seam with a name: the **Bright Line** — the boundary, defined in the AI-DB, that keeps the AI from reaching the consequences the FC-DB says must not happen. Read that way, the governance primitives of Module 4 are not a grab-bag; they are the machinery of the second design basis. Criticality tiering is *how much does this AI's failure matter, measured against the inherited consequences.* The Command Broker is what enforces the Bright Line in live operation.
+The two meet at a seam with a name: the **Bright Line** — the boundary, defined in the AI-DB, that keeps the AI from reaching the consequences the FC-DB says must not happen. Read that way, the governance primitives of Module 4 are not a grab-bag; they are the machinery of the second design basis. Criticality banding is *how much does this AI's failure matter, measured against the inherited consequences.* The Command Broker is what enforces the Bright Line in live operation.
 
 Note the word *inherits*, because it carries a trap. What is inherited is **consequence, not authority**. The AI-DB does not thereby become the junior document: at the seam the two bases are co-equal, and neither settles a collision by outranking the other. Assert the facility's primacy and you hand the AI's real risks to a design basis that never enumerated them; assert the AI's and it governs a facility in which it has no standing. The merge is therefore a **managed interface** — the seam itself becomes the governed object, owned by someone, with a duty to detect conflict before acting and a fallback when conflict cannot be removed. That is not a novel invention: it is what the NRC did when two co-equal design bases, safety and security, met in one plant (10 CFR 73.58). Where the nuclear world discharges that duty through a review board on human time, the AI case must discharge it at runtime — and **the Command Broker is the arbiter of design basis collisions.** The unit that carries this argument (Module 3, unit 05) is written out alongside the one above.
 
@@ -111,7 +111,7 @@ One further consequence, which turns out to be the strongest practical argument 
 
 The capstone asks the student to pick a real facility in their sector. Both branches analyze the same facility; the deliverable differs. Crucially, **both design bases are required of both branches** — OT *derives* the FC-DB and the AI-DB and shows the Bright Line between them; policy *analyzes* both and the governance gap of each. A capstone that produces only one design basis does not pass, regardless of how well that one is done. That gate is deliberate: producing an FC-DB and calling it finished is exactly the incomplete answer the course exists to prevent.
 
-A shared rubric checks the both-DBs gate first, then grades the fundamentals: consequence-anchored root, the inherit-and-diverge relationship, bounded adversary envelopes correctly distinguished, criticality tiering against inherited consequences, and genuine sector fit.
+A shared rubric checks the both-DBs gate first, then grades the fundamentals: consequence-anchored root, the inherit-and-diverge relationship, bounded adversary envelopes correctly distinguished, criticality banding against inherited consequences, and genuine sector fit.
 
 ---
 
