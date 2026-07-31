@@ -1,8 +1,14 @@
 # Reading List
 
-Authoritative external sources behind the course, grouped by theme. The author's own instrument series (the DBA / DBA-MA documents, the Command Broker and TAF frameworks, the Democratic Safeguards papers) is referenced from within the modules and is not duplicated here; this list is the external foundation the method builds on. Current-example sources are dated because they age.
+Authoritative external sources behind the course, grouped by theme. The author's own instrument series (the DBA / DBA-MA documents, the Command Broker and TAF frameworks, the Democratic Safeguards papers) is referenced from within the modules and is not duplicated here — its map is the **series overview** in the next section; this list is the external foundation the method builds on. Current-example sources are dated because they age.
 
 > **This list is an index, not an assignment.** Where a source does real work in the course, it has a **Course Note** — an excerpt placed in context under the heading it serves, with what it establishes and where the AI case departs from it. Those are in [`course-notes/`](course-notes/), and they are what you should actually read. Entries below that carry a Note reference point into that collection; the rest are the foundation, there when you want to go deeper.
+
+## The author's instrument series — start with the map
+
+The course teaches *from* the author's own instrument series but does not reproduce it here. The single best entry point is the series overview, which lays out the design-basis method, the gap it fills, and the full document inventory (the ISA Parent Framework, the Tiered Assessment Framework, the Command Broker corpus, and the DBA sector series) and how the pieces relate.
+
+- **[Design Basis for AI Governance in Critical Infrastructure: An Overview](https://scubanuke.github.io/publications/AI_Governance_Series_Overview.pdf)** — the map of the series this course draws from, on the canonical Publications mirror. Start here, then follow its inventory into the individual instruments.
 
 ## Nuclear design-basis foundations
 

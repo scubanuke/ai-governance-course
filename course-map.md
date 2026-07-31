@@ -4,6 +4,8 @@
 
 The through-line is the **method** — how a design basis is derived and how a facility class is carved. The energy, nuclear, and data-center material are worked examples hanging off that spine, not the only supported paths.
 
+> **The framework this course teaches from.** The instrument series behind the course — the ISA Parent Framework, the Tiered Assessment Framework, the Command Broker corpus, and the DBA sector series — is mapped in the **[AI Governance Series Overview](https://scubanuke.github.io/publications/AI_Governance_Series_Overview.pdf)** on the canonical Publications mirror. Start there for the document inventory and how the pieces relate.
+
 ---
 
 ## Core — everyone walks this (sector-agnostic method)
