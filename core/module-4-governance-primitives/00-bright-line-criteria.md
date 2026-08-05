@@ -29,3 +29,7 @@ You now have the seam. The two units that follow live on it. The **criticality b
 ## In your sector
 
 For the facility and consequence you carried out of Module 3, try to state a Bright Line in a single, observable criterion — a specific action, authority, or condition such that crossing it would put an AI within reach of that consequence. Then test it for brightness: could an operator, or a machine, tell in the moment whether it had been crossed? If the answer is "not quite," keep sharpening — the difficulty of making the line bright is exactly the work this unit is teaching.
+
+---
+
+> **Governing instruments.** This unit's primitives are the teaching form of the series' foundational layer: the Bright Line is fixed by **FD-BL** (placement by consequence, action by action); the Command Broker's mode of discharge — including the advance-discharge exception via a verified gatekeeper — by **FD-BL-D1**; the integrity of the picture an authorization rests on by **FD-BL-D2**; and the reserved use of "envelope" by **FD-EV**.

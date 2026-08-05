@@ -8,6 +8,8 @@ Module 4 introduced the Command Broker as the runtime enforcer of the Bright Lin
 
 The Bright Line, realized, is "the boundary between the advisory layer and the physical command layer," and the governing rule is absolute: *nothing crosses it without passing through a human Command Broker.* The critical word is *architectural.* The control system must be **incapable** of executing an AI-originated physical command without a positive human confirmation that is local, auditable, and "not itself executable remotely or by another software component." The AI has no wire to the setpoint, the valve, or the breaker. Defense by architecture means the protection does not depend on anyone following a procedure correctly under stress — it holds because the path does not exist.
 
+> **On placement.** The advisory/command seam is *where* the Bright Line is enforced — the architectural place the Command Broker sits — not what *defines* where the line falls. Placement is by consequence, action by action (Module 4): an action is above the line when its incorrect performance could reach the facility's must-not-happen consequences, wherever in the architecture it originates. Building enforcement at the seam is correct; treating the seam itself as the definition is the layer-boundary formulation that **FD-BL** (§4.2) sets aside.
+
 And the line is drawn by **consequence, not sophistication**: "sophistication does not govern; consequence governs." A crude dosing-adjustment AI at a water plant may sit above the line while a far more sophisticated data-center energy optimizer sits below it. What places a system above the line is the severity of what it could cause, exactly as the design basis has insisted since Module 2.
 
 ## The Proposer–Gate pattern

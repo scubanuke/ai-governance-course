@@ -24,6 +24,8 @@ The reason this belongs in a critical-infrastructure course is scale. In energy 
 
 The governance answer is, again, the Module 4 primitive. There is a Bright Line between the AI's **advisory layer** and the **consequential-action layer** — and in a market the consequential action is the *publication and amplification of market-moving content.* The human gate is an Influence Broker who must authorize that action; detection systems produce probabilistic correlation scores that trigger a *recommendation* to a credentialed human, never an automated trip. "The principle is the same. The pipeline is different. The governance requirement is identical."
 
+> The advisory / consequential-action seam here is the *enforcement* point for the Influence Broker; placement remains by consequence — the action is above the line because publishing and amplifying market-moving content can reach a market-integrity consequence, not because it sits in a particular layer (**FD-BL** §4.2).
+
 What differs from the physical domain is the enforcement lever. Because the manipulation has no prosecutable principal, the analysis leans on **liability inversion**: make the market operator the accountability anchor with an affirmative duty to deploy detection, so that *inaction* becomes the exposure — an operator who could detect and declines to act faces participant litigation exceeding any political risk of acting. Detection records, preserved and auditable from day one, do double duty as operational control and courtroom evidence. Governance here is distributed — operators detect, regulators refer, private litigants sue, courts set the de facto standard.
 
 ## For your capstone analysis

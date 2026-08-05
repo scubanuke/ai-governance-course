@@ -18,7 +18,7 @@ One entry per key term, plain-language first. Terms are defined as the course us
 
 - **Design basis vs. risk management** — they differ in epistemology, not rigor. Risk management works against a threat envelope it never formally bounds; a design basis formally bounds the envelope and carries a forcing function that triggers review when a threat exceeds it. Without that function, risk assumptions drift silently.
 
-- **Bright Line** — the boundary, defined in the AI-DB, past which the AI's action could reach the facility's must-not-happen consequences; the seam where the AI design basis fastens to the facility's. Must be *bright* — observably crossed or not. (Written as two words, no hyphen, in the architectural-boundary sense.)
+- **Bright Line** — the boundary, defined in the AI-DB, past which the AI's action could reach the facility's must-not-happen consequences; the seam where the AI design basis fastens to the facility's. Must be *bright* — observably crossed or not. (Written as two words, no hyphen, in the governance sense — the consequence-reachability seam.)
 
 - **Criticality band** — the AI-DB's severity scale: how much the AI's failure matters, measured against the inherited consequences. Structured as the SIL-equivalent (functional-safety Safety Integrity Level analog) for AI; a higher band means greater reach to worse consequences and correspondingly greater assurance obligations. Three bands — **Highest, Mid, Lowest** — set by the worst reachable consequence (take-the-max). Orthogonal to the **error class**, which names *what kind* of cognitive error is assessed. (Retired numeric labels: Tier 1/2/3.)
 
@@ -29,6 +29,14 @@ One entry per key term, plain-language first. Terms are defined as the course us
 - **Course Note** — the course's supporting-reference unit: a source excerpt placed in context under the heading it serves, with what it establishes and where the AI case departs from it. Numbered by module (M03-CN-01) and collected in `resources/course-notes/`. Not a reading list.
 
 - **Proposer–Gate pattern** — the runtime architecture that realizes the Command Broker: an unverifiable *proposer* (the AI) holds proposal authority only, while a simple, deterministic, formally verified *gatekeeper* holds veto authority and is the sole path to the process. The safety case lives entirely in the gatekeeper.
+
+- **Advance discharge (FD-BL-D1)** — the determination that the human authorization the Command Broker supplies may, for a narrow class of above-line actions, be discharged *in advance* by the verified gatekeeper rather than in the moment — but only under R1 (the whole safety case in the gatekeeper), R2 (completeness proven over state, trajectory, and rate, so selection is bounded), and R3 (changes *to* the pre-authorized envelope are excluded from advance discharge). Where the proof fails, the action takes in-the-moment authorization. Formalizes the Proposer–Gate pattern.
+
+- **Indication integrity (FD-BL-D2)** — the determination that an authorization is bounded only if the state it is granted against is real. Generative output that can ground an above-line authorization must be traceable to independently verifiable values (I2) and must not be the sole basis for it (I3); a broker or gatekeeper acting on a corrupted or drifted picture is *confident and wrong*.
+
+- **Pre-authorized envelope / operating band (FD-EV)** — the terminology reservation. **"Envelope"** is reserved for the *authorization* object (the region within which an above-line action is pre-authorized; changing it is an R3 event); the *monitoring* object — a region of normal operation whose violation is a runtime event to detect — is the **operating band**. Distinct from the *adversary envelope* of the design-basis method (the bounded threat set), which is a different concept.
+
+- **Foundational instruments (FD-)** — the governing layer the series conforms to: **FD-BL** (The Bright Line — placement, granularity, scope, obligation), **FD-LD** (layer decomposition & determinism), and the determinations **FD-BL-D1** (advance discharge), **FD-BL-D2** (indication integrity), and **FD-EV** (envelope). The course's primitives are the teaching form of these.
 
 - **Facility class** — a carved category of facilities alike enough in consequence and adversary profile that a single design basis can serve the whole category. Justified by the strategic-significance boundary.
 

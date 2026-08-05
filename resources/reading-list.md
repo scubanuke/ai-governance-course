@@ -1,6 +1,6 @@
 # Reading List
 
-Authoritative external sources behind the course, grouped by theme. The author's own instrument series (the DBA / DBA-MA documents, the Command Broker and TAF frameworks, the Democratic Safeguards papers) is referenced from within the modules and is not duplicated here — its map is the **series overview** in the next section; this list is the external foundation the method builds on. Current-example sources are dated because they age.
+Authoritative external sources behind the course, grouped by theme. The author's own instrument series (the DBA / DBA-MA documents, the Command Broker and TAF frameworks, the Democratic Safeguards papers) is referenced from within the modules and is not duplicated here (its governing layer is now the Foundational Definitions and determinations — FD-BL, FD-LD, FD-BL-D1, FD-BL-D2, FD-EV — which the series overview maps) — its map is the **series overview** in the next section; this list is the external foundation the method builds on. Current-example sources are dated because they age.
 
 > **This list is an index, not an assignment.** Where a source does real work in the course, it has a **Course Note** — an excerpt placed in context under the heading it serves, with what it establishes and where the AI case departs from it. Those are in [`course-notes/`](course-notes/), and they are what you should actually read. Entries below that carry a Note reference point into that collection; the rest are the foundation, there when you want to go deeper.
 
