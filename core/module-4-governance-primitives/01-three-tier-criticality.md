@@ -32,7 +32,7 @@ The band is not an end in itself — it is an instruction to the rest of the sys
 
 ## In your sector
 
-For the facility, consequence, and Bright Line you have been building, place your AI: Highest, Mid, or Lowest criticality band? State the reason in terms of reach — how severe the consequence it can touch, and how many independent barriers sit between the AI and that consequence. Notice that the honest answer sometimes lowers the tier (the barriers are real) and sometimes raises it (the barriers turn out to depend on the AI itself). That second discovery is one this module especially wants you to be able to make.
+For the facility, consequence, and Bright Line you have been building, place your AI: Highest, Mid, or Lowest criticality band? State the reason in terms of reach — how severe the consequence it can touch, and how many independent barriers sit between the AI and that consequence. Notice that the honest answer sometimes lowers the band (the barriers are real) and sometimes raises it (the barriers turn out to depend on the AI itself). That second discovery is one this module especially wants you to be able to make.
 
 ---
 
