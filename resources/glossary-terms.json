@@ -42,7 +42,7 @@
   {
     "term": "Bright Line",
     "expansion": "",
-    "definition": "the boundary, defined in the AI-DB, past which the AI's action could reach the facility's must-not-happen consequences; the seam where the AI design basis fastens to the facility's. Must be *bright* — observably crossed or not. (Written as two words, no hyphen, in the governance sense — the consequence-reachability seam.)"
+    "definition": "the boundary, defined in the AI-DB, past which the AI's action could reach the facility's must-not-happen consequences; the seam where the AI design basis fastens to the facility's. Must be *bright* — observably crossed or not. (Written as two words, no hyphen, in the governance sense — the consequence-reachability seam.) Defined in FD-BL (*The Bright Line*) as a threshold on actions: each action is placed above or below the line on its own consequence."
   },
   {
     "term": "Criticality band",
@@ -57,7 +57,12 @@
   {
     "term": "Command Broker (CB-)",
     "expansion": "",
-    "definition": "the construct that enforces the Bright Line in live operation, mediating every AI command before it can reach the controlled system, and the **arbiter of design basis collisions**: where both the FC-DB and the AI-DB have a legitimate claim on the same decision, the Broker settles it at decision speed, since neither basis outranks the other. Made trustworthy by independence from the AI, determinism/verifiability, and minimality. Distinct from the CDB- communications design basis."
+    "definition": "The Broker for industrial and control settings: the qualified human who gives the substantive, attributable authorization the Bright Line requires before an above-line action executes. Defined as a role, not a component, in FD-BR (*The Broker*), which pairs it to FD-BL (*The Bright Line*). It works with the **Gate**, the enforcement interlock that makes an above-line action impossible to execute without authorization; the Gate never authorizes and never stands in for the Broker. The course's result is that the Command Broker is also the **arbiter of design basis collisions**: where both the FC-DB and the AI-DB have a legitimate claim on the same decision, the Broker settles it at decision speed, since neither basis outranks the other. Distinct from the CDB- communications design basis."
+  },
+  {
+    "term": "The Broker (FD-BR)",
+    "expansion": "",
+    "definition": "The role-type, defined in FD-BR (*The Broker*), that discharges a Bright Line's authorization obligation: a qualified human, not an office, a software component, or a procedure telling someone to confirm. Each Broker is paired to one Line, and the role does not transfer between Lines. There are two instantiations: the **Command Broker**, paired to FD-BL (*The Bright Line*), and the **Influence Broker**, paired to the surveillance Bright Line. With the Line and the Gate, the Broker completes the enforcement triad: the Line places the obligation, the Gate enforces it, and the Broker authorizes."
   },
   {
     "term": "Managed interface",
@@ -72,15 +77,15 @@
   {
     "term": "Proposer–Gate pattern",
     "expansion": "",
-    "definition": "the runtime architecture that realizes the Command Broker: an unverifiable *proposer* (the AI) holds proposal authority only, while a simple, deterministic, formally verified *gatekeeper* holds veto authority and is the sole path to the process. The safety case lives entirely in the gatekeeper."
+    "definition": "The runtime architecture that makes advance discharge possible under *Mode of Discharge* (FD-BL-D1): an unverifiable *proposer* (the AI) holds proposal authority only, while a simple, deterministic, formally verified *gatekeeper* holds veto authority and is the sole path to the process. The safety case lives entirely in the gatekeeper. The gatekeeper is not a second kind of broker: the Command Broker authorizes the envelope the gatekeeper enforces."
   },
   {
-    "term": "Advance discharge (FD-BL-D1)",
+    "term": "Mode of Discharge (FD-BL-D1)",
     "expansion": "",
-    "definition": "the determination that the human authorization the Command Broker supplies may, for a narrow class of above-line actions, be discharged *in advance* by the verified gatekeeper rather than in the moment — but only under R1 (the whole safety case in the gatekeeper), R2 (completeness proven over state, trajectory, and rate, so selection is bounded), and R3 (changes *to* the pre-authorized envelope are excluded from advance discharge). Where the proof fails, the action takes in-the-moment authorization. Formalizes the Proposer–Gate pattern."
+    "definition": "The determination under FD-BL (*The Bright Line*) of whether the Command Broker's authorization may, for a narrow class of above-line actions, be discharged *in advance* rather than in the moment. It may, if and only if three conditions all hold. R1: the whole safety case lives in a formally verified gatekeeper that the proposing AI can neither modify nor bypass. R2: the gatekeeper's acceptance set is proven safe over state, trajectory and rate, so that *which* action is chosen, and not merely *whether* it is allowed, is bounded. R3: changes *to* the pre-authorized envelope are excluded. The human authorization is not skipped but relocated in time: a qualified human authorized the envelope and accepted the proof. Where the proof fails, the action takes in-the-moment authorization. Formerly listed here as *Advance discharge*."
   },
   {
-    "term": "Indication integrity (FD-BL-D2)",
+    "term": "Indication Integrity (FD-BL-D2)",
     "expansion": "",
     "definition": "the determination that an authorization is bounded only if the state it is granted against is real. Generative output that can ground an above-line authorization must be traceable to independently verifiable values (I2) and must not be the sole basis for it (I3); a broker or gatekeeper acting on a corrupted or drifted picture is *confident and wrong*."
   },
@@ -90,9 +95,14 @@
     "definition": "the terminology reservation. **\"Envelope\"** is reserved for the *authorization* object (the region within which an above-line action is pre-authorized; changing it is an R3 event); the *monitoring* object — a region of normal operation whose violation is a runtime event to detect — is the **operating band**. Distinct from the *adversary envelope* of the design-basis method (the bounded threat set), which is a different concept."
   },
   {
-    "term": "Foundational instruments (FD-)",
+    "term": "Foundational Definitions (FD-)",
     "expansion": "",
-    "definition": "the governing layer the series conforms to: **FD-BL** (The Bright Line — placement, granularity, scope, obligation), **FD-LD** (layer decomposition & determinism), and the determinations **FD-BL-D1** (advance discharge), **FD-BL-D2** (indication integrity), and **FD-EV** (envelope). The course's primitives are the teaching form of these."
+    "definition": "The governing layer the whole corpus conforms to, held as one dated edition, currently the **October 2026 Edition**. Each idea is defined once, and every other document cites it by name and section rather than restating it; where wording differs, the definition governs. The five definitions are FD-BL (*The Bright Line*), FD-LD (*Layer Decomposition and Determinism*), FD-EV (*The Envelope*), FD-BR (*The Broker*) and FD-LS (*Local Sovereignty*). Two determinations sit under the Bright Line and settle questions it left open: FD-BL-D1 (*Mode of Discharge*) and FD-BL-D2 (*Indication Integrity*). They are not definitions. The course's primitives are the teaching form of these instruments."
+  },
+  {
+    "term": "Governing Stack Register (FD-REG)",
+    "expansion": "",
+    "definition": "The companion to the Foundational Definitions, not a member of the family. It holds the current version of every definition, so a citation names the section, not the version, and resolves to the current text here. A citation that pinned a version would lead a reader to superseded text once the definition was revised."
   },
   {
     "term": "Facility class",
@@ -117,7 +127,7 @@
   {
     "term": "Local Sovereignty",
     "expansion": "",
-    "definition": "a protective function maintained independent of the digital infrastructure it protects: colocated with the asset, operating on physical principles, unreachable through the adversary's channels. Embodied by the Aurora Disruptor."
+    "definition": "A property of a protective function, defined in FD-LS (*Local Sovereignty*): the function executes on physical law, is colocated with the asset it protects, and requires no authority from any reachable system to act. It is a property of a function, not of a device, and all three conditions must hold. The burden of proof is on the intermediation, not on the independence. Embodied by the Aurora Disruptor."
   },
   {
     "term": "Aurora Disruptor",
@@ -137,7 +147,7 @@
   {
     "term": "Influence Broker",
     "expansion": "",
-    "definition": "the governance remedy to the AIB: a mandatory human gate interposed between the generation and delivery stages, architecturally non-bypassable, which also restores accountability. The information-domain analog of the Command Broker."
+    "definition": "the governance remedy to the AIB: a mandatory human authorization point interposed between the generation and delivery stages, architecturally non-bypassable, which also restores accountability. The information-domain analog of the Command Broker. Under FD-BR (*The Broker*) it is the Broker paired to the surveillance Bright Line, and it is not a Command Broker."
   },
   {
     "term": "Aggregation Threshold",
