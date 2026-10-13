@@ -1,7 +1,7 @@
 # Design Basis for AI Governance
 ### A self-paced course in consequence-anchored governance for critical infrastructure
 
-**Version 1.3 — complete course**
+**Version 1.4 — complete course**
 Author: Timothy E. Roxey, Eclectic Technologies
 
 ---
@@ -47,7 +47,7 @@ When you pick your sector at Module 0, the course does not require that prebuilt
 
 ## Status and roadmap
 
-This is **v1.3**, a complete static repository — every core module, the bridge, both branches, and the capstone are fully written, with a glossary, a reading list, and the Course Notes collection in `resources/`. Sector selection and progress are handled by reading the routing above and working through the folders in order.
+This is **v1.4**, a complete static repository — every core module, the bridge, both branches, and the capstone are fully written, with a glossary, a reading list, and the Course Notes collection in `resources/`. Sector selection and progress are handled by reading the routing above and working through the folders in order.
 
 A later version is planned to become a **live form** that gathers a student's progress and, on request, produces an email summarizing where they are in the course. The seed for that lives in [`resources/progress-tracker.md`](resources/progress-tracker.md). It is a design placeholder for now, not a working feature.
 
@@ -72,6 +72,7 @@ A later version is planned to become a **live form** that gathers a student's pr
 
 ## Changelog
 
+- **v1.4 (2026-10-13) — Command Broker unit conformed to The Broker (FD-BR).** Module 4 unit 02 rewritten: the Command Broker is the qualified human role that authorizes above-line actions; independence, determinism and minimality are now properties of the Gate, which enforces but never authorizes. New sections on why the Broker is a human, what makes an authorization count, and advance discharge under Mode of Discharge (FD-BL-D1). The arbiter result is unchanged. Module 4 README, course map and reviewer preview updated to match.
 - **v1.3 (2026-10-13) — Glossary conformed to the October 2026 Edition of the Foundational Definitions.** The foundational-instruments entry is now *Foundational Definitions*, naming all five definitions (FD-BL, FD-LD, FD-EV, FD-BR, FD-LS) and the two determinations under the Bright Line. New entries for *The Broker* (FD-BR) and the *Governing Stack Register* (FD-REG). FD-BL-D1 renamed from *Advance discharge* to *Mode of Discharge*. The Command Broker, Influence Broker, Proposer–Gate and Local Sovereignty entries now follow FD-BR and FD-LS: the Broker is a human role, the Gate enforces but never authorizes, and Local Sovereignty is a property of a protective function. Glossary only; no unit text changed.
 - **v1.2 (2026-10-13) — Glossary as a tap-to-define component; resilience vocabulary.** The glossary is now rendered from a single structured source, `resources/glossary-terms.json`, by the tap-to-define component ported from the SMR licensing site (tap, not hover, so it works on touch screens; one definition open at a time). The prose `resources/glossary.md` is retired. Six terms added to separate vocabulary that is commonly conflated: **Robust**, **Resilient**, **Redundant**, **Diverse**, **Independent**, and **Robust and Diverse** — the nuclear-safety design principle, applied across all critical infrastructure sectors, that resilience builds on. Robust and Resilient are tied to deterrence by denial and deterrence by resilience respectively. One sentence added to the deterrence-forms unit of the policy branch: redundancy counts toward denial only when the redundant means are diverse and independent.
 - **v1.1 (2026-07-31) — Consequence-Severity vocabulary reconciliation.** Brought the course into line with the reformed instrument corpus (TAF v2.6): the AI-DB severity scale is now the **criticality-band model** (Highest / Mid / Lowest) and the TAF's assessment axis is the **error class** (safety-critical / quality-of-service / compliance), two orthogonal axes. Retired the numeric "Tier 1/2/3" language and the band=class conflation throughout — modules, branches, capstone, worked examples, glossary, and nav. Unit filenames are unchanged (per conventions); materially reworded units carry a changelog note. Method and worked classifications unchanged.

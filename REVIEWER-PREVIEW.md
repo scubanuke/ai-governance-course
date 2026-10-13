@@ -60,7 +60,7 @@ The full set of module objectives, so you can see the progression:
 
 **Module 3 — Design Basis Methodology.** Define and derive a design basis; explain DB → DBA → DBA-MA; **distinguish the two design bases (facility-class and AI) and the inherit-the-root / diverge-on-the-envelope relationship**; identify the Bright Line as the seam between them; **reconcile the two as a managed interface rather than a hierarchy, and locate the arbitration point where their collisions are settled**.
 
-**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality band measured against inherited consequences; describe how the Command Broker enforces the Bright Line in operation and arbitrates collisions between the two design bases.
+**Module 4 — The Governance Primitives (the AI-DB toolkit).** Explain Bright Line Criteria as the seam; place an AI system in a criticality band measured against inherited consequences; describe how the Gate enforces the Bright Line in operation and how the Command Broker authorizes across it and arbitrates collisions between the two design bases.
 
 ### Bridge
 

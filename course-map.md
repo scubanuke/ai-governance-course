@@ -1,6 +1,6 @@
 # Course Map — Design Basis for AI Governance
 
-**Version 1.3.** This is the syllabus for the complete course; the folders mirror it.
+**Version 1.4.** This is the syllabus for the complete course; the folders mirror it.
 
 The through-line is the **method** — how a design basis is derived and how a facility class is carved. The energy, nuclear, and data-center material are worked examples hanging off that spine, not the only supported paths.
 
@@ -30,7 +30,7 @@ The crown jewel. What a design basis is, borrowed from nuclear safety, and how y
 Closes with: *In Your Sector.*
 
 ### Module 4 — The governance primitives (the AI-DB toolkit)
-Reframed as the **machinery of the AI design basis**, all sitting on the Bright Line seam from Module 3. Bright Line Criteria (the seam itself), the criticality-band model (the AI-DB's severity scale, measured against inherited consequences), and the Command Broker (what enforces the Bright Line in operation). Not a grab-bag of primitives — the toolkit that builds and enforces the second design basis.
+Reframed as the **machinery of the AI design basis**, all sitting on the Bright Line seam from Module 3. Bright Line Criteria (the seam itself), the criticality-band model (the AI-DB's severity scale, measured against inherited consequences), and the Command Broker (the qualified human who authorizes across the Bright Line in operation, with the Gate that enforces it). Not a grab-bag of primitives — the toolkit that builds and enforces the second design basis.
 Closes with: *In Your Sector.*
 
 ---
