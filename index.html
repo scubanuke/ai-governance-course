@@ -129,6 +129,36 @@
 
   .loaderr{color:var(--muted); font-style:italic}
 
+  /* ---------- glossary component (reusable; ported from smr-licensing) ----------
+     Tap to reveal, never hover: hover has no equivalent on a touch screen and a
+     definition that only appears on hover is invisible to half the readers. One
+     open at a time. */
+  .gl-hint{
+    font-family:var(--mono); font-size:12px; letter-spacing:.04em;
+    color:var(--muted); margin:0 0 18px;
+  }
+  .gl-list{margin:0; padding:0; list-style:none}
+  .gl-item{border-bottom:1px solid var(--faint)}
+  .gl-term{
+    display:block; width:100%; text-align:left; cursor:pointer;
+    background:none; border:0; padding:11px 0;
+    font-family:var(--serif); font-size:17px; color:var(--ink);
+  }
+  .gl-term:hover{color:var(--line-deep)}
+  .gl-term .gl-name{font-weight:600}
+  .gl-term .gl-exp{color:var(--muted); font-style:italic}
+  .gl-term .gl-mk{
+    font-family:var(--mono); font-size:11px; color:var(--line);
+    margin-right:9px; display:inline-block; width:10px;
+  }
+  .gl-item.open .gl-term{color:var(--line-deep)}
+  .gl-def{
+    margin:0 0 14px 19px; padding-left:14px;
+    border-left:2px solid var(--line);
+    font-size:16.5px; line-height:1.6; color:var(--ink);
+  }
+  .gl-def[hidden]{display:none}
+
   /* ---------- responsive ---------- */
   @media (max-width:820px){
     .app{grid-template-columns:1fr}
@@ -259,7 +289,7 @@ const NAV = [
     {t:"Worked Example — Northgate (Bulk Electric)", f:"resources/worked-example-northgate-bulk-electric.md"},
     {t:"Worked Example — Water", f:"resources/worked-example-water-treatment.md"},
     {t:"Conventions", f:"CONVENTIONS.md"},
-    {t:"Glossary", f:"resources/glossary.md"},
+    {t:"Glossary", f:"resources/glossary"},
     {t:"Reading List", f:"resources/reading-list.md"},
     {t:"Course Notes", f:"resources/course-notes/README.md"},
     {t:"CN · M03-CN-01 Safety/Security Interface", f:"resources/course-notes/M03-CN-01-safety-security-interface.md"},
@@ -323,8 +353,73 @@ function rewriteLinks(path){
   });
 }
 
+// The glossary is rendered from structured data rather than from markdown, so one
+// terms file (resources/glossary-terms.json) is the single source. Definitions carry
+// inline markdown (italic, bold), rendered with marked.parseInline. Ported from the
+// smr-licensing site; drop this function, its CSS block and a terms JSON into any sibling.
+let GLOSSARY = null;
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+async function renderGlossary(){
+  if(!GLOSSARY){
+    const res = await fetch('resources/glossary-terms.json', {cache:'no-cache'});
+    if(!res.ok) throw new Error(res.status);
+    GLOSSARY = await res.json();
+  }
+  const rows = GLOSSARY.map((t,i) => {
+    const exp = t.expansion ? ' <span class="gl-exp">— '+esc(t.expansion)+'</span>' : '';
+    return '<li class="gl-item" data-i="'+i+'">'
+         +   '<button class="gl-term" type="button" aria-expanded="false" aria-controls="gld'+i+'">'
+         +     '<span class="gl-mk" aria-hidden="true">+</span>'
+         +     '<span class="gl-name">'+esc(t.term)+'</span>'+exp
+         +   '</button>'
+         +   '<div class="gl-def" id="gld'+i+'" hidden>'+marked.parseInline(t.definition)+'</div>'
+         + '</li>';
+  }).join('');
+
+  mdEl.innerHTML =
+      '<h1>Glossary</h1>'
+    + '<p>Plain-language first. Terms are defined as the course uses them; where a term has '
+    + 'a specific instrument or standard behind it, that is noted.</p>'
+    + '<p class="gl-hint">Tap a term for its definition.</p>'
+    + '<ul class="gl-list">'+rows+'</ul>';
+
+  mdEl.querySelectorAll('.gl-term').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.gl-item');
+      const def  = item.querySelector('.gl-def');
+      const open = !def.hidden;
+      mdEl.querySelectorAll('.gl-item.open').forEach(o => {      // one open at a time
+        o.classList.remove('open');
+        o.querySelector('.gl-def').hidden = true;
+        o.querySelector('.gl-term').setAttribute('aria-expanded','false');
+        o.querySelector('.gl-mk').textContent = '+';
+      });
+      if(!open){
+        item.classList.add('open');
+        def.hidden = false;
+        btn.setAttribute('aria-expanded','true');
+        item.querySelector('.gl-mk').textContent = '−';
+      }
+    });
+  });
+}
+
 async function load(path){
   mdEl.innerHTML='<p class="loaderr">Loading…</p>';
+  if(path === 'resources/glossary' || path === 'resources/glossary.md'){
+    path = 'resources/glossary';
+    try{ await renderGlossary(); }
+    catch(e){ mdEl.innerHTML='<h1>Not available offline</h1><p class="loaderr">The glossary loads its terms from the repository and needs to be viewed on the published site.</p>'; }
+    mdEl.classList.remove('md'); void mdEl.offsetWidth; mdEl.classList.add('md');
+    window.scrollTo(0,0);
+    setActive(path);
+    document.getElementById('nav').classList.remove('open');
+    return;
+  }
   try{
     const res=await fetch(path,{cache:'no-cache'});
     if(!res.ok) throw new Error(res.status);

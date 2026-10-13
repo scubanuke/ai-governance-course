@@ -76,7 +76,7 @@ ai-governance-course/
     course-notes/
       M03-CN-01-safety-security-interface.md
       README.md
-    glossary.md
+    glossary-terms.json
     in-your-sector-template.md
     progress-tracker.md
     reading-list.md
